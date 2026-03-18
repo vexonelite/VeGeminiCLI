@@ -328,6 +328,56 @@ class ApiViewModel : ViewModel(), MuseumApiModelDelegate,
 
         return Pair<List<WtcRfGalleryItem>, String>(galleryList, "")
     }
+
+    override fun cloneRfidTagGalleryItemByHumanCheck(
+        srcRfidTagGalleryItem: RfidTagGalleryItemDelegate,
+        humanChecked: Boolean,
+    ): RfidTagGalleryItemDelegate {
+        return if (srcRfidTagGalleryItem is RfidTagGalleryItemImpl) {
+            srcRfidTagGalleryItem.copy(theHumanChecked = humanChecked)
+        }
+        else {
+            RfidTagGalleryItemImpl(
+                theDataObject = srcRfidTagGalleryItem.theDataObject,
+                theIdentifier = srcRfidTagGalleryItem.theIdentifier,
+                theCellType = srcRfidTagGalleryItem.theCellType,
+                theDescription = srcRfidTagGalleryItem.theDescription,
+                theAction = srcRfidTagGalleryItem.theAction,
+                theUsageScenario = srcRfidTagGalleryItem.theUsageScenario,
+                theHumanChecked = humanChecked,
+            )
+        }
+    }
+
+    override fun cloneGalleryByCodeAndName(
+        srcGalleryItem: RfGalleryItemDelegate, code: String?, nameCht: String?
+    ): RfGalleryItemDelegate {
+        return if (srcGalleryItem is NtmofaRfGalleryItem) {
+            srcGalleryItem.copy(
+                theCode = code ?: srcGalleryItem.theCode,
+                theNameCht = nameCht ?: srcGalleryItem.theNameCht,
+            )
+        }
+        else {
+            NtmofaRfGalleryItem(
+                theGalleryId = srcGalleryItem.theGalleryId,
+                theCode = code ?: srcGalleryItem.theCode,
+                theNameCht = nameCht ?: srcGalleryItem.theNameCht,
+                theAuthorCht = srcGalleryItem.theAuthorCht,
+                theKind = srcGalleryItem.theKind,
+                thePartsQty = srcGalleryItem.thePartsQty,
+                theLength = srcGalleryItem.theLength,
+                theWidth = srcGalleryItem.theWidth,
+                theHeight = srcGalleryItem.theHeight,
+                theLocation1 = srcGalleryItem.theLocation1,
+                theLocation2 = srcGalleryItem.theLocation2,
+                theLocation3 = srcGalleryItem.theLocation3,
+                thePlace = srcGalleryItem.thePlace,
+                theRemark = srcGalleryItem.theRemark,
+                theStatus = srcGalleryItem.theStatus,
+            )
+        }
+    }
 }
 
 
