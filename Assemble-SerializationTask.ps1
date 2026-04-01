@@ -1,28 +1,35 @@
+# Assemble-SerializationTask.ps1 (v2.2)
+# 目的：組裝模型生成任務，並嚴格鎖定輸出路徑與操作規則
 
-# Assemble-SerializationTask.ps1 (v2.1)
-# Bundles everything and forces the agent to use the local output path
-
+# 定義路徑 - 這裡使用您的目錄結構
 $skillDir = Join-Path (Get-Location).Path "serialization_generator_skill"
-$outputSubDir = "./serialization_generator_skill/output"
+$outputSubDir = "./serialization_generator_skill/output/"
+$inputDataPath = Join-Path (Get-Location).Path "input_data.md"
 $outputPath = Join-Path $skillDir "full_bundle_prompt.txt"
 
-Write-Host "--- 🔍 正在組裝 Serialization 生成任務 ---" -ForegroundColor Cyan
+Write-Host "--- 🔍 正在組裝 Kotlin Serialization 生成任務 ---" -ForegroundColor Cyan
 
-# 1. Grab Instructions & Constraints
+# 1. 抓取核心指令與約束 (Core v1.4 + Constraints)
+Write-Host "讀取 v1.4 核心指令與約束條件..."
 $corePrompt = Get-Content (Join-Path $skillDir "core_instruction.md") -Raw
 $constraints = Get-Content (Join-Path $skillDir "constraints.md") -Raw
 
-# 2. Grab Domain Context
+# 2. 遞迴抓取 Domain Context (API 基礎類別定義)
+Write-Host "抓取知識庫檔案 (Domain Context)..."
 $domainContext = Get-ChildItem (Join-Path $skillDir "domain_context") -Include *.kt, *.md -Recurse | ForEach-Object {
     $content = Get-Content $_.FullName -Raw
     "檔案路徑: $($_.FullName)`n內容:`n$content`n---`n"
 } | Out-String
 
-# 3. Grab JSONs and Work Order
-$inputData = Get-Content (Join-Path (Get-Location).Path "input_data.md") -Raw
+# 3. 抓取待處理 JSON 數據 (input_data.md)
+Write-Host "讀取 5 個 JSON 數據資料集..."
+$inputData = Get-Content $inputDataPath -Raw
+
+# 4. 抓取工單 (task_museum_models.md)
+Write-Host "讀取最新工單任務..."
 $workOrder = Get-Content (Join-Path $skillDir "task_museum_models.md") -Raw
 
-# 4. Final Assembly
+# 5. 最終組裝 (加入強制路徑聲明)
 $finalPrompt = @"
 [SYSTEM_INSTRUCTIONS]
 $corePrompt
@@ -39,16 +46,17 @@ $inputData
 [WORK_ORDER]
 $workOrder
 
-[OUTPUT_PATH_REQUIREMENT]
-所有的檔案必須儲存在此路徑下：$outputSubDir
-如果檔案已存在，請使用 edit_file 進行附加；如果不存在，請使用 write_file 建立新檔。
+[MANDATORY_SCOPE_LOCK]
+1. 所有的 [TARGET_FILE] 必須指向 $outputSubDir
+2. 嚴格禁止搜尋或修改 compose_refactor_skill 目錄。
+3. 檢查 $outputSubDir 下的檔案：若不存在則 write_file；若已存在則 edit_file (附加)。
 "@
 
-# 5. Output and Copy
+# 6. 寫入檔案並自動複製
 $finalPrompt | Out-File -FilePath $outputPath -Encoding utf8
 Get-Content $outputPath -Raw | Set-Clipboard
 
 Write-Host "---" -ForegroundColor Gray
-Write-Host "✅ 組裝完成！" -ForegroundColor Green
-Write-Host "📋 內容已存至剪貼簿。請到 Gemini CLI 貼上。" -ForegroundColor Yellow
-Write-Host "🚀 注意：代理人將會把檔案寫入 $outputSubDir" -ForegroundColor Cyan
+Write-Host "✅ 組裝完成！內容已複製到剪貼簿。" -ForegroundColor Green
+Write-Host "📋 請至 Gemini CLI 貼上。代理人將會寫入至：$outputSubDir" -ForegroundColor Yellow
+
