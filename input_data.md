@@ -1,54 +1,23 @@
 
+i provide the domain text in ``./domain_context/base_delegates.kt``.
 
-* JSON_QUERY_1:
+
+
+
+* Request1 (QueryModel for ControlGroup)
 ```
 {
+  "Q_CloneId": "string",
   "Q_BaseID": "string",
-  "Q_RecordID": "string",
-  "Q_AccessionNumber": "string",
-  "Q_AccessionNumber2": "string",
-  "Q_Author": "string",
-  "Q_StorageLocation": "string",
+  "Q_ControlGroupId": "string",
   "Q_Kind": "string",
-  "Q_KindChildren": "string",
-  "Q_Level": "string",
-  "Q_YYYY": 0,
-  "Q_Secondary": 0,
-  "Q_BeginDate": "2026-03-31T07:40:25.312Z",
-  "Q_EndDate": "2026-03-31T07:40:25.312Z",
-  "Q_GalleryCode": "string",
-  "Q_ViewReasonCode": "string",
-  "Q_BaseDetail2ID": "string",
-  "Q_SerialNumber": "string",
-  "Q_GalleryID": "string",
-  "Q_Semicolon": "string",
-  "Q_Status": "string",
-  "Q_Form": "string",
-  "RequestKey": "string",
+  "Q_KindName": "string",
+  "Q_Name": "string",
+  "Q_ReName": "string",
+  "Q_Enabled": "string",
+  "Q_EnabledName": "string",
   "Q_Keyword": "string",
-  "Q_CreatorId": "string",
-  "Q_CreatorCode": "string",
-  "Q_CreatorName": "string",
-  "Q_CreateDate": "2026-03-31T07:40:25.312Z",
-  "Q_CreateDateFrom": "2026-03-31T07:40:25.312Z",
-  "Q_CreateDateTo": "2026-03-31T07:40:25.312Z",
-  "Q_UpdaterId": "string",
-  "Q_UpdaterCode": "string",
-  "Q_UpdaterName": "string",
-  "Q_UpdateDate": "2026-03-31T07:40:25.312Z",
-  "Q_UpdateDateFrom": "2026-03-31T07:40:25.312Z",
-  "Q_UpdateDateTo": "2026-03-31T07:40:25.312Z",
   "Q_QueryLevel": "string",
-  "ReportType": 0,
-  "ReportId": "string",
-  "ExportName": "string",
-  "ReportTitle": "string",
-  "ReportSourceType": 0,
-  "ReportPrintMethod": "string",
-  "ReportScheduleDate": "string",
-  "ReportScheduleHour": 0,
-  "ReportScheduleMin": 0,
-  "ClientMessage": "string",
   "Q_PageIndex": 0,
   "Q_PageSize": 0,
   "Sort": [
@@ -60,567 +29,412 @@
 }
 ```
 
-* JSON_QUERY_2:
-```
-{
-  "Q_BaseID": "string",
-  "Q_RecordID": "string",
-  "Q_AccessionNumber": "string",
-  "Q_AccessionNumber2": "string",
-  "Q_Author": "string",
-  "Q_StorageLocation": "string",
-  "Q_Kind": "string",
-  "Q_KindChildren": "string",
-  "Q_Level": "string",
-  "Q_YYYY": 0,
-  "Q_Secondary": 0,
-  "Q_BeginDate": "2026-03-31T07:40:25.344Z",
-  "Q_EndDate": "2026-03-31T07:40:25.344Z",
-  "Q_GalleryCode": "string",
-  "Q_ViewReasonCode": "string",
-  "Q_BaseDetail2ID": "string",
-  "Q_SerialNumber": "string",
-  "Q_GalleryID": "string",
-  "Q_Semicolon": "string",
-  "Q_Status": "string",
-  "Q_Form": "string",
-  "RequestKey": "string",
-  "Q_Keyword": "string",
-  "Q_CreatorId": "string",
-  "Q_CreatorCode": "string",
-  "Q_CreatorName": "string",
-  "Q_CreateDate": "2026-03-31T07:40:25.344Z",
-  "Q_CreateDateFrom": "2026-03-31T07:40:25.344Z",
-  "Q_CreateDateTo": "2026-03-31T07:40:25.344Z",
-  "Q_UpdaterId": "string",
-  "Q_UpdaterCode": "string",
-  "Q_UpdaterName": "string",
-  "Q_UpdateDate": "2026-03-31T07:40:25.344Z",
-  "Q_UpdateDateFrom": "2026-03-31T07:40:25.344Z",
-  "Q_UpdateDateTo": "2026-03-31T07:40:25.344Z",
-  "Q_QueryLevel": "string",
-  "ReportType": 0,
-  "ReportId": "string",
-  "ExportName": "string",
-  "ReportTitle": "string",
-  "ReportSourceType": 0,
-  "ReportPrintMethod": "string",
-  "ReportScheduleDate": "string",
-  "ReportScheduleHour": 0,
-  "ReportScheduleMin": 0,
-  "ClientMessage": "string",
-  "Q_PageIndex": 0,
-  "Q_PageSize": 0,
-  "Sort": [
-    {
-      "ColumnName": "string",
-      "Direction": "string"
-    }
-  ]
-}
-```
 
-* JSON_RESPONSE_1:
+* Response1 (ControlGroup)
 ```
 {
   "Data": [
     {
-      "CVB_BaseID": "string",
-      "CVB_AccessionNumber": "string",
-      "CVB_AccessionNumber_XX": "string",
-      "CVB_AccessionNumber2": "string",
-      "CVB_AuthCode": "string",
-      "CVB_Author": "string",
-      "CVB_BaseMaterial": "string",
-      "CVB_Carrier": "string",
-      "CVB_Code": "string",
-      "CVB_CreateDate": "2026-03-31T07:40:25.311Z",
-      "CVB_CreatorId": "string",
-      "CVB_CreatorName_XX": "string",
-      "CVB_DigitizeDate": "2026-03-31T07:40:25.311Z",
-      "CVB_DigitizePerson": "string",
-      "CVB_DimensionX": 0,
-      "CVB_DimensionY": 0,
-      "CVB_DimensionZ": 0,
-      "CVB_Edition": "string",
-      "CVB_EnAuthor": "string",
-      "CVB_EnWritName": "string",
-      "CVB_FramedForm": "string",
-      "CVB_GalleryCode_XX": "string",
-      "CVB_GalleryID": "string",
-      "CVB_Height": 0,
-      "CVB_ImageUrl": "string",
-      "CVB_Inspector": "string",
-      "CVB_IsFrame": "string",
-      "CVB_Kind": "string",
-      "CVB_KindChildren": "string",
-      "CVB_KindMain_XX": "string",
-      "CVB_KindName_XX": "string",
-      "CVB_KindRemark": "string",
-      "CVB_Length": 0,
-      "CVB_Level": "string",
-      "CVB_Loc1": "string",
-      "CVB_Loc2": "string",
-      "CVB_Loc3": "string",
-      "CVB_Loc4": "string",
-      "CVB_MainQty": 0,
-      "CVB_MediaLength": 0,
-      "CVB_MountingMaterialH": 0,
-      "CVB_MountingMaterialL": 0,
-      "CVB_MountingMaterialW": 0,
-      "CVB_PartsQty": 0,
-      "CVB_ProtectiveMeasures": "string",
-      "CVB_Recorder": "string",
-      "CVB_Remark": "string",
-      "CVB_ScreenProtect": "string",
-      "CVB_Secondary": 0,
-      "CVB_Semicolon": "string",
-      "CVB_SerialNumber": "string",
-      "CVB_SizeDesc": "string",
-      "CVB_Source": "string",
-      "CVB_Source_XX": "string",
-      "CVB_Status": "string",
-      "CVB_StatusName_XX": "string",
-      "CVB_StorageLocation": "string",
-      "CVB_UpdateDate": "2026-03-31T07:40:25.311Z",
-      "CVB_UpdaterId": "string",
-      "CVB_UpdaterName_XX": "string",
-      "CVB_ViewDate": "2026-03-31T07:40:25.311Z",
-      "CVB_ViewReason": "string",
-      "CVB_ViewReasonCode_XX": "string",
-      "CVB_ViewReasonName_XX": "string",
-      "CVB_Weight": 0,
-      "CVB_Width": 0,
-      "CVB_WritName": "string",
-      "CVB_Years": "string",
-      "CVB_YYYY": 0
+      "CVCG_CloneId": "string",
+      "CVCG_ActInspector": "string",
+      "CVCG_ActRecorder": "string",
+      "CVCG_BaseId": "string",
+      "CVCG_ControlGroupId": "string",
+      "CVCG_Enabled": "string",
+      "CVCG_EnabledName_XX": "string",
+      "CVCG_Kind": "string",
+      "CVCG_KindName_XX": "string",
+      "CVCG_Name": "string",
+      "CVCG_ReName": "string",
     }
   ],
   "Success": true,
   "Code": "string",
   "Message": "string",
-  "DataTime": "2026-03-31T07:40:25.311Z",
+  "DataTime": "2026-04-05T01:29:03.367Z",
   "TotalCount": 0
 }
 ```
 
-* JSON_RESPONSE_2:
+
+* Response2 (ControlGroupDetail)
 ```
 {
   "Data": [
     {
-      "CVB_BaseID": "string",
-      "CVB_AccessionNumber": "string",
-      "CVB_AccessionNumber_XX": "string",
-      "CVB_AccessionNumber2": "string",
-      "CVB_AuthCode": "string",
-      "CVB_Author": "string",
-      "CVB_BaseMaterial": "string",
-      "CVB_Carrier": "string",
-      "CVB_Code": "string",
-      "CVB_CreateDate": "2026-03-31T07:40:25.339Z",
-      "CVB_CreatorId": "string",
-      "CVB_CreatorName_XX": "string",
-      "CVB_DigitizeDate": "2026-03-31T07:40:25.339Z",
-      "CVB_DigitizePerson": "string",
-      "CVB_DimensionX": 0,
-      "CVB_DimensionY": 0,
-      "CVB_DimensionZ": 0,
-      "CVB_Edition": "string",
-      "CVB_EnAuthor": "string",
-      "CVB_EnWritName": "string",
-      "CVB_FramedForm": "string",
-      "CVB_GalleryCode_XX": "string",
-      "CVB_GalleryID": "string",
-      "CVB_Height": 0,
-      "CVB_ImageUrl": "string",
-      "CVB_Inspector": "string",
-      "CVB_IsFrame": "string",
-      "CVB_Kind": "string",
-      "CVB_KindChildren": "string",
-      "CVB_KindMain_XX": "string",
-      "CVB_KindName_XX": "string",
-      "CVB_KindRemark": "string",
-      "CVB_Length": 0,
-      "CVB_Level": "string",
-      "CVB_Loc1": "string",
-      "CVB_Loc2": "string",
-      "CVB_Loc3": "string",
-      "CVB_Loc4": "string",
-      "CVB_MainQty": 0,
-      "CVB_MediaLength": 0,
-      "CVB_MountingMaterialH": 0,
-      "CVB_MountingMaterialL": 0,
-      "CVB_MountingMaterialW": 0,
-      "CVB_PartsQty": 0,
-      "CVB_ProtectiveMeasures": "string",
-      "CVB_Recorder": "string",
-      "CVB_Remark": "string",
-      "CVB_ScreenProtect": "string",
-      "CVB_Secondary": 0,
-      "CVB_Semicolon": "string",
-      "CVB_SerialNumber": "string",
-      "CVB_SizeDesc": "string",
-      "CVB_Source": "string",
-      "CVB_Source_XX": "string",
-      "CVB_Status": "string",
-      "CVB_StatusName_XX": "string",
-      "CVB_StorageLocation": "string",
-      "CVB_UpdateDate": "2026-03-31T07:40:25.339Z",
-      "CVB_UpdaterId": "string",
-      "CVB_UpdaterName_XX": "string",
-      "CVB_ViewDate": "2026-03-31T07:40:25.339Z",
-      "CVB_ViewReason": "string",
-      "CVB_ViewReasonCode_XX": "string",
-      "CVB_ViewReasonName_XX": "string",
-      "CVB_Weight": 0,
-      "CVB_Width": 0,
-      "CVB_WritName": "string",
-      "CVB_Years": "string",
-      "CVB_YYYY": 0
+      "CVCGD_CloneId": "string",
+      "CVCGD_BaseId_XX": "string",
+      "CVCGD_CGCloneId": "string",
+      "CVCGD_CGID_XX": "string",
+      "CVCGD_ControlGroupDetailId": "string",
+      "CVCGD_ControlGroupName_XX": "string",
+      "CVCGD_Enabled": "string",
+      "CVCGD_EnabledName_XX": "string",
+      "CVCGD_Name": "string",
+      "CVCGD_SortNo": 0,
     }
   ],
   "Success": true,
   "Code": "string",
   "Message": "string",
-  "DataTime": "2026-03-31T07:40:25.339Z",
+  "DataTime": "2026-04-05T01:29:03.375Z",
   "TotalCount": 0
 }
+
 ```
 
-* JSON_RESPONSE_3:
+
+* Response3 (ControlSetting)
 ```
 {
   "Data": [
     {
-      "Children_Author": [
-        {
-          "CVA_AuthorID": "string",
-          "CVA_BaseID": "string",
-          "CVA_CreateDate": "2026-03-31T07:40:25.341Z",
-          "CVA_CreatorId": "string",
-          "CVA_CreatorName_XX": "string",
-          "CVA_Documents": "string",
-          "CVA_Documents2": "string",
-          "CVA_ExhibitRecord": "string",
-          "CVA_Guarantee": "string",
-          "CVA_Installation": "string",
-          "CVA_IsProviderName_XX": "string",
-          "CVA_Provider": "string",
-          "CVA_UpdateDate": "2026-03-31T07:40:25.341Z",
-          "CVA_UpdaterId": "string",
-          "CVA_UpdaterName_XX": "string"
-        }
-      ],
-      "Children_Detail1": [
-        {
-          "CVBD1_BaseDetail1ID": "string",
-          "CVBD1_BaseID": "string",
-          "CVBD1_CreateDate": "2026-03-31T07:40:25.341Z",
-          "CVBD1_CreatorId": "string",
-          "CVBD1_CreatorName_XX": "string",
-          "CVBD1_GalleryContentId": "string",
-          "CVBD1_Remark": "string",
-          "CVBD1_Semicolon": "string",
-          "CVBD1_UpdateDate": "2026-03-31T07:40:25.341Z",
-          "CVBD1_UpdaterId": "string",
-          "CVBD1_UpdaterName_XX": "string"
-        }
-      ],
-      "Children_Detail2": [
-        {
-          "CVBD2_BaseDetail2ID": "string",
-          "CVBD2_BaseID": "string",
-          "CVBD2_CreateDate": "2026-03-31T07:40:25.341Z",
-          "CVBD2_CreatorId": "string",
-          "CVBD2_CreatorName_XX": "string",
-          "CVBD2_IsBack": "string",
-          "CVBD2_IsFront": "string",
-          "CVBD2_IsOther": "string",
-          "CVBD2_IsPhoto": "string",
-          "CVBD2_Signature1": "string",
-          "CVBD2_Signature2": "string",
-          "CVBD2_Signature3": "string",
-          "CVBD2_UpdateDate": "2026-03-31T07:40:25.341Z",
-          "CVBD2_UpdaterId": "string",
-          "CVBD2_UpdaterName_XX": "string"
-        }
-      ],
-      "Children_AttachFile": [
-        {
-          "CVAF_AttachFileId": "string",
-          "CVAF_CreateDate": "2026-03-31T07:40:25.341Z",
-          "CVAF_CreatorCode_XX": "string",
-          "CVAF_CreatorId": "string",
-          "CVAF_CreatorName_XX": "string",
-          "CVAF_FileName": "string",
-          "CVAF_FullName": "string",
-          "CVAF_GroupCode": "string",
-          "CVAF_IsLink": "string",
-          "CVAF_MIME": "string",
-          "CVAF_ObjectId": "string",
-          "CVAF_RefId": "string",
-          "CVAF_Size": 0,
-          "CVAF_UpdateDate": "2026-03-31T07:40:25.341Z",
-          "CVAF_UpdaterCode_XX": "string",
-          "CVAF_UpdaterId": "string",
-          "CVAF_UpdaterName_XX": "string"
-        }
-      ],
-      "ViewReasonName": "string",
-      "IsLock": "string",
-      "IsView": "string",
-      "Detail": [
-        {
-          "AccessionNumber": "string",
-          "Kind": "string",
-          "KindChildren": "string",
-          "Number": "string",
-          "BaseID": "string",
-          "IsReView": "string",
-          "IsView": "string"
-        }
-      ],
-      "SemicolonCount": 0,
-      "CVB_BaseID": "string",
-      "CVB_AccessionNumber": "string",
-      "CVB_AccessionNumber_XX": "string",
-      "CVB_AccessionNumber2": "string",
-      "CVB_AuthCode": "string",
-      "CVB_Author": "string",
-      "CVB_BaseMaterial": "string",
-      "CVB_Carrier": "string",
-      "CVB_Code": "string",
-      "CVB_CreateDate": "2026-03-31T07:40:25.341Z",
-      "CVB_CreatorId": "string",
-      "CVB_CreatorName_XX": "string",
-      "CVB_DigitizeDate": "2026-03-31T07:40:25.341Z",
-      "CVB_DigitizePerson": "string",
-      "CVB_DimensionX": 0,
-      "CVB_DimensionY": 0,
-      "CVB_DimensionZ": 0,
-      "CVB_Edition": "string",
-      "CVB_EnAuthor": "string",
-      "CVB_EnWritName": "string",
-      "CVB_FramedForm": "string",
-      "CVB_GalleryCode_XX": "string",
-      "CVB_GalleryID": "string",
-      "CVB_Height": 0,
-      "CVB_ImageUrl": "string",
-      "CVB_Inspector": "string",
-      "CVB_IsFrame": "string",
-      "CVB_Kind": "string",
-      "CVB_KindChildren": "string",
-      "CVB_KindMain_XX": "string",
-      "CVB_KindName_XX": "string",
-      "CVB_KindRemark": "string",
-      "CVB_Length": 0,
-      "CVB_Level": "string",
-      "CVB_Loc1": "string",
-      "CVB_Loc2": "string",
-      "CVB_Loc3": "string",
-      "CVB_Loc4": "string",
-      "CVB_MainQty": 0,
-      "CVB_MediaLength": 0,
-      "CVB_MountingMaterialH": 0,
-      "CVB_MountingMaterialL": 0,
-      "CVB_MountingMaterialW": 0,
-      "CVB_PartsQty": 0,
-      "CVB_ProtectiveMeasures": "string",
-      "CVB_Recorder": "string",
-      "CVB_Remark": "string",
-      "CVB_ScreenProtect": "string",
-      "CVB_Secondary": 0,
-      "CVB_Semicolon": "string",
-      "CVB_SerialNumber": "string",
-      "CVB_SizeDesc": "string",
-      "CVB_Source": "string",
-      "CVB_Source_XX": "string",
-      "CVB_Status": "string",
-      "CVB_StatusName_XX": "string",
-      "CVB_StorageLocation": "string",
-      "CVB_UpdateDate": "2026-03-31T07:40:25.341Z",
-      "CVB_UpdaterId": "string",
-      "CVB_UpdaterName_XX": "string",
-      "CVB_ViewDate": "2026-03-31T07:40:25.341Z",
-      "CVB_ViewReason": "string",
-      "CVB_ViewReasonCode_XX": "string",
-      "CVB_ViewReasonName_XX": "string",
-      "CVB_Weight": 0,
-      "CVB_Width": 0,
-      "CVB_WritName": "string",
-      "CVB_Years": "string",
-      "CVB_YYYY": 0
+      "CVCS_CloneId": "string",
+      "CVCS_BaseId_XX": "string",
+      "CVCS_CGDCloneId": "string",
+      "CVCS_CGDID_XX": "string",
+      "CVCS_CGDSortNo_XX": 0,
+      "CVCS_CGID_XX": "string",
+      "CVCS_ControlGroupDetailName_XX": "string",
+      "CVCS_ControlGroupName_XX": "string",
+      "CVCS_ControlSettingId": "string",
+      "CVCS_Name": "string",
+      "CVCS_Remark": "string",
+      "CVCS_SortNo": 0,
     }
   ],
   "Success": true,
   "Code": "string",
   "Message": "string",
-  "DataTime": "2026-03-31T07:40:25.341Z",
+  "DataTime": "2026-04-05T01:29:03.395Z",
   "TotalCount": 0
 }
 ```
 
 
-and i provide the models for response
-
+* Response4 (ControlProperty)
 ```
-@Serializable
-abstract class BaseRestfulApiResponse (
-    @SerializedName("Success") @SerialName("Success") val isSuccess: Boolean = false,
-    @SerializedName("Code") @SerialName("Code") val theStatusCode: String = "",
-    @SerializedName("Message") @SerialName("Message") val theMessage: String = "",
-    @SerializedName("DataTime") @SerialName("DataTime") val theDataTime: String = "",
-) : FmApiResponseDelegate {
-
-    override fun hasSuccessfulResult(): Boolean = isSuccess &&
-            ( (theStatusCode == FmRestfulApiConstants.CODE_SUCCESS) ||
-                    (theStatusCode == FmRestfulApiConstants.CODE_SAVE_SUCCESS) ||
-                    (theStatusCode == FmRestfulApiConstants.CODE_DELETE_SUCCESS))
-
-    override fun buildFmApiErrorException(): ApiErrorException = ApiErrorException(theMessage, theStatusCode)
+{
+  "Data": [
+    {
+      "CVCP_CloneId": "string",
+      "CVCP_BaseId_XX": "string",
+      "CVCP_CGDID_XX": "string",
+      "CVCP_CGDSortNo_XX": 0,
+      "CVCP_CGID_XX": "string",
+      "CVCP_ControlCode_XX": "string",
+      "CVCP_ControlCodeGroupId": "string",
+      "CVCP_ControlCodeGroupName_XX": "string",
+      "CVCP_ControlCodeGroupSortNo_XX": 0,
+      "CVCP_ControlCodeId": "string",
+      "CVCP_ControlCodeName_XX": "string",
+      "CVCP_ControlCodeSortNo_XX": 0,
+      "CVCP_ControlGroupDetailName_XX": "string",
+      "CVCP_ControlGroupName_XX": "string",
+      "CVCP_ControlPropertyId": "string",
+      "CVCP_ControlSettingName_XX": "string",
+      "CVCP_CSCloneId": "string",
+      "CVCP_CSID_XX": "string",
+      "CVCP_CSSortNo_XX": 0,
+      "CVCP_SortNo": 0,
+    }
+  ],
+  "Success": true,
+  "Code": "string",
+  "Message": "string",
+  "DataTime": "2026-04-05T02:46:38.060Z",
+  "TotalCount": 0
 }
-
-
-
-interface RfGalleryItemDelegate {
-    val theGalleryId: String
-    /**  */
-    val theCode: String
-    /**  */
-    val theNameCht: String
-    /**  */
-    val theNameEng: String
-    /**  */
-    val theAuthorCht: String
-    /**  */
-    val theKind: String
-
-    /**  */
-    val theImageUrl: String
-
-    /**  */
-    val thePartsQty: Float?
-    /**  */
-    val theLength: Float?
-    /**  */
-    val theWidth: Float?
-    /**  */
-    val theHeight: Float?
-    /**  */
-    val theLocation1: String
-    /**  */
-    val theLocation2: String
-    /**  */
-    val theLocation3: String
-    /**  */
-    //val theLocation4: String
-    /**  */
-    val thePlace: String
-    /**  */
-    val theRemark: String
-    /**  */
-    val theStatus: String
-    /**  */
-    val theStatusName: String
-
-    /**  */
-    val theOnSite: String
-
-}
-
-
-@Serializable
-data class WtcRfGalleryItem(
-
-    /**  */
-    @SerializedName("RFG_GalleryId") @SerialName("RFG_GalleryId")
-    override val theGalleryId: String = "",
-    /**  */
-    @SerializedName("RFG_Code") @SerialName("RFG_Code")
-    override val theCode: String = "",
-    /**  */
-    @SerializedName("RFG_NameCht") @SerialName("RFG_NameCht")
-    override val theNameCht: String = "",
-    /**  */
-    @SerializedName("RFG_NameEng") @SerialName("RFG_NameEng")
-    override val theNameEng: String = "",
-    /**  */
-    @SerializedName("RFG_AuthorCht") @SerialName("RFG_AuthorCht")
-    override val theAuthorCht: String = "",
-    /**  */
-    @SerializedName("RFG_AuthorEng") @SerialName("RFG_AuthorEng") val authorEng: String = "",
-    /**  */
-    @SerializedName("RFG_Kind") @SerialName("RFG_Kind")
-    override val theKind: String = "",
-
-    /**  */
-    @SerializedName("RFG_Group") @SerialName("RFG_Group") val group: String = "",
-    /**  */
-    @SerializedName("RFG_GroupName_XX") @SerialName("RFG_GroupName_XX") val groupName: String = "",
-    /**  */
-    @SerializedName("RFG_Situation") @SerialName("RFG_Situation") val situation: String = "",
-    /**  */
-    @SerializedName("RFG_ImageUrl") @SerialName("RFG_ImageUrl")
-    override val theImageUrl: String = "",   
-
-    /**  */
-    @SerializedName("RFG_Loc1") @SerialName("RFG_Loc1")
-    override val theLocation1: String = "",
-    /**  */
-    @SerializedName("RFG_Loc2") @SerialName("RFG_Loc2")
-    override val theLocation2: String = "",
-    /**  */
-    @SerializedName("RFG_Loc3") @SerialName("RFG_Loc3")
-    override val theLocation3: String = "",
-    /**  */
-    @SerializedName("RFG_Loc4") @SerialName("RFG_Loc4")
-    val location4: String = "",
-    /**  */
-    @SerializedName("RFG_LocDesc_XX") @SerialName("RFG_LocDesc_XX") val locationDescription: String = "",
-    /**  */
-    @SerializedName("RFG_Place") @SerialName("RFG_Place")
-    override val thePlace: String = "",
-    /**  */
-    @SerializedName("RFG_PartsQty") @SerialName("RFG_PartsQty")
-    override val thePartsQty: Float? = null,
-    /**  */
-    @SerializedName("RFG_Length") @SerialName("RFG_Length")
-    override val theLength: Float? = null,
-    /**  */
-    @SerializedName("RFG_Width") @SerialName("RFG_Width")
-    override val theWidth: Float? = null,
-    /**  */
-    @SerializedName("RFG_Height") @SerialName("RFG_Height")
-    override val theHeight: Float? = null,
-    /**  */
-    @SerializedName("RFG_FilmLength") @SerialName("RFG_FilmLength") val filmLength: String = "",
-    /**  */
-    @SerializedName("RFG_ReferenceId") @SerialName("RFG_ReferenceId") val referenceId: Float? = null,
-    /**  */
-    @SerializedName("RFG_Remark") @SerialName("RFG_Remark")
-    override val theRemark: String = "",
-    /**  */
-    @SerializedName("RFG_Status") @SerialName("RFG_Status")
-    override val theStatus: String = "",
-    /**  */
-    @SerializedName("RFG_StatusName_XX") @SerialName("RFG_StatusName_XX")
-    override val theStatusName: String = "",
-
-    /**  */
-    @SerializedName("RFG_OnSite") @SerialName("RFG_OnSite")
-    override val theOnSite: String = "",   
-    /**  */
-    @SerializedName("RFG_OnSiteName_XX") @SerialName("RFG_OnSiteName_XX") val onSiteName: String = "",
-    /**  */
-    @SerializedName("RFG_NeedUpload") @SerialName("RFG_NeedUpload") val needUpload: String = "",
-) : RfGalleryItemDelegate
-
-
-@Serializable
-data class WtcGalleryListResponse(
-    @SerializedName("Data") @SerialName("Data") val theData: List<WtcRfGalleryItem> = listOf(),
-) : BaseRestfulApiResponse()
 ```
 
+
+* Response5 (ControlPropertyItem)
+```
+{
+  "Data": [
+    {
+      "CVCPI_CloneId": "string",
+      "CVCPI_BaseId_XX": "string",
+      "CVCPI_CGDID_XX": "string",
+      "CVCPI_CGDSortNo_XX": 0,
+      "CVCPI_CGID_XX": "string",
+      "CVCPI_Code": "string",
+      "CVCPI_CodeGroupId": "string",
+      "CVCPI_ControlCode_XX": "string",
+      "CVCPI_ControlGroupDetailName_XX": "string",
+      "CVCPI_ControlGroupName_XX": "string",
+      "CVCPI_ControlPropertyId": "string",
+      "CVCPI_ControlPropertyItemId": "string",
+      "CVCPI_ControlSettingName_XX": "string",
+      "CVCPI_CPCloneId": "string",
+      "CVCPI_CPID_XX": "string",
+      "CVCPI_CPSortNo_XX": 0,
+      "CVCPI_CSID_XX": "string",
+      "CVCPI_CSSortNo_XX": 0,
+      "CVCPI_DIndex": 0,
+      "CVCPI_FileMode": "string",
+      "CVCPI_Height": 0,
+      "CVCPI_Index": 0,
+      "CVCPI_ItemLabel": "string",
+      "CVCPI_ItemSort": 0,
+      "CVCPI_ItemValue": "string",
+      "CVCPI_MIndex": 0,
+      "CVCPI_NodeId": "string",
+      "CVCPI_ParentId": "string",
+      "CVCPI_RecordValue": "string",
+      "CVCPI_RelactionClickValue": "string",
+      "CVCPI_RelactionControl": "string",
+      "CVCPI_RelactionControlName": "string",
+      "CVCPI_RelactionValue": "string",
+      "CVCPI_Rows": 0,
+      "CVCPI_Subject": "string",
+      "CVCPI_Type": "string",
+      "CVCPI_Url": "string",
+      "CVCPI_UrlAction": "string",
+      "CVCPI_Width": 0
+    }
+  ],
+  "Success": true,
+  "Code": "string",
+  "Message": "string",
+  "DataTime": "2026-04-05T02:46:38.066Z",
+  "TotalCount": 0
+}
+```
+
+
+* Response6 (ControlCode)
+```
+{
+  "Data": [
+    {
+      "SYCC_ControlCodeId": "string",
+      "SYCC_Code": "string",
+      "SYCC_Enabled": "string",
+      "SYCC_EnabledName_XX": "string",
+      "SYCC_Icon": "string",
+      "SYCC_Name": "string",
+      "SYCC_SortNo": 0,
+    }
+  ],
+  "Success": true,
+  "Code": "string",
+  "Message": "string",
+  "DataTime": "2026-04-05T02:46:38.486Z",
+  "TotalCount": 0
+}
+```
+
+
+* Response7 (Nested response for ControlGroup)
+```
+{
+  "Data": [
+    {
+      "Children_ControlGroupDetail": [
+        {
+          "Children_ControlSetting": [
+            {
+              "Children_ControlProperty": [
+                {
+                  "Children_ControlCode": [
+                    {
+                      "SYCC_ControlCodeId": "string",
+                      "SYCC_Code": "string",
+                      "SYCC_Enabled": "string",
+                      "SYCC_EnabledName_XX": "string",
+                      "SYCC_Icon": "string",
+                      "SYCC_Name": "string",
+                      "SYCC_SortNo": 0,
+                    }
+                  ],
+                  "Children_ControlCodeGroup": [
+                    {
+                      "Children_ControlProperty": [
+                        {
+                          "CVCP_CloneId": "string",
+                          "CVCP_BaseId_XX": "string",
+                          "CVCP_CGDID_XX": "string",
+                          "CVCP_CGDSortNo_XX": 0,
+                          "CVCP_CGID_XX": "string",
+                          "CVCP_ControlCode_XX": "string",
+                          "CVCP_ControlCodeGroupId": "string",
+                          "CVCP_ControlCodeGroupName_XX": "string",
+                          "CVCP_ControlCodeGroupSortNo_XX": 0,
+                          "CVCP_ControlCodeId": "string",
+                          "CVCP_ControlCodeName_XX": "string",
+                          "CVCP_ControlCodeSortNo_XX": 0,
+                          "CVCP_ControlGroupDetailName_XX": "string",
+                          "CVCP_ControlGroupName_XX": "string",
+                          "CVCP_ControlPropertyId": "string",
+                          "CVCP_ControlSettingName_XX": "string",
+                          "CVCP_CSCloneId": "string",
+                          "CVCP_CSID_XX": "string",
+                          "CVCP_CSSortNo_XX": 0,
+                          "CVCP_SortNo": 0,
+                        }
+                      ],
+                      "Children_ControlPropertyItem": [
+                        {
+                          "CVCPI_CloneId": "string",
+                          "CVCPI_BaseId_XX": "string",
+                          "CVCPI_CGDID_XX": "string",
+                          "CVCPI_CGDSortNo_XX": 0,
+                          "CVCPI_CGID_XX": "string",
+                          "CVCPI_Code": "string",
+                          "CVCPI_CodeGroupId": "string",
+                          "CVCPI_ControlCode_XX": "string",
+                          "CVCPI_ControlGroupDetailName_XX": "string",
+                          "CVCPI_ControlGroupName_XX": "string",
+                          "CVCPI_ControlPropertyId": "string",
+                          "CVCPI_ControlPropertyItemId": "string",
+                          "CVCPI_ControlSettingName_XX": "string",
+                          "CVCPI_CPCloneId": "string",
+                          "CVCPI_CPID_XX": "string",
+                          "CVCPI_CPSortNo_XX": 0,
+                          "CVCPI_CSID_XX": "string",
+                          "CVCPI_CSSortNo_XX": 0,
+                          "CVCPI_DIndex": 0,
+                          "CVCPI_FileMode": "string",
+                          "CVCPI_Height": 0,
+                          "CVCPI_Index": 0,
+                          "CVCPI_ItemLabel": "string",
+                          "CVCPI_ItemSort": 0,
+                          "CVCPI_ItemValue": "string",
+                          "CVCPI_MIndex": 0,
+                          "CVCPI_NodeId": "string",
+                          "CVCPI_ParentId": "string",
+                          "CVCPI_RecordValue": "string",
+                          "CVCPI_RelactionClickValue": "string",
+                          "CVCPI_RelactionControl": "string",
+                          "CVCPI_RelactionControlName": "string",
+                          "CVCPI_RelactionValue": "string",
+                          "CVCPI_Rows": 0,
+                          "CVCPI_Subject": "string",
+                          "CVCPI_Type": "string",
+                          "CVCPI_Url": "string",
+                          "CVCPI_UrlAction": "string",
+                          "CVCPI_Width": 0
+                        }
+                      ],
+                      "CVCCG_CloneId": "string",
+                      "CVCCG_ControlCodeGroupId": "string",
+                      "CVCCG_CPCloneId": "string",
+                      "CVCCG_Enabled": "string",
+                      "CVCCG_EnabledName_XX": "string",
+                      "CVCCG_Name": "string",
+                      "CVCCG_SortNo": 0,
+                    }
+                  ],
+                  "Children_ControlPropertyItem": [
+                    {
+                      "CVCPI_CloneId": "string",
+                      "CVCPI_BaseId_XX": "string",
+                      "CVCPI_CGDID_XX": "string",
+                      "CVCPI_CGDSortNo_XX": 0,
+                      "CVCPI_CGID_XX": "string",
+                      "CVCPI_Code": "string",
+                      "CVCPI_CodeGroupId": "string",
+                      "CVCPI_ControlCode_XX": "string",
+                      "CVCPI_ControlGroupDetailName_XX": "string",
+                      "CVCPI_ControlGroupName_XX": "string",
+                      "CVCPI_ControlPropertyId": "string",
+                      "CVCPI_ControlPropertyItemId": "string",
+                      "CVCPI_ControlSettingName_XX": "string",
+                      "CVCPI_CPCloneId": "string",
+                      "CVCPI_CPID_XX": "string",
+                      "CVCPI_CPSortNo_XX": 0,
+                      "CVCPI_CSID_XX": "string",
+                      "CVCPI_CSSortNo_XX": 0,
+                      "CVCPI_DIndex": 0,
+                      "CVCPI_FileMode": "string",
+                      "CVCPI_Height": 0,
+                      "CVCPI_Index": 0,
+                      "CVCPI_ItemLabel": "string",
+                      "CVCPI_ItemSort": 0,
+                      "CVCPI_ItemValue": "string",
+                      "CVCPI_MIndex": 0,
+                      "CVCPI_NodeId": "string",
+                      "CVCPI_ParentId": "string",
+                      "CVCPI_RecordValue": "string",
+                      "CVCPI_RelactionClickValue": "string",
+                      "CVCPI_RelactionControl": "string",
+                      "CVCPI_RelactionControlName": "string",
+                      "CVCPI_RelactionValue": "string",
+                      "CVCPI_Rows": 0,
+                      "CVCPI_Subject": "string",
+                      "CVCPI_Type": "string",
+                      "CVCPI_Url": "string",
+                      "CVCPI_UrlAction": "string",
+                      "CVCPI_Width": 0
+                    }
+                  ],
+                  "CVCP_CloneId": "string",
+                  "CVCP_BaseId_XX": "string",
+                  "CVCP_CGDID_XX": "string",
+                  "CVCP_CGDSortNo_XX": 0,
+                  "CVCP_CGID_XX": "string",
+                  "CVCP_ControlCode_XX": "string",
+                  "CVCP_ControlCodeGroupId": "string",
+                  "CVCP_ControlCodeGroupName_XX": "string",
+                  "CVCP_ControlCodeGroupSortNo_XX": 0,
+                  "CVCP_ControlCodeId": "string",
+                  "CVCP_ControlCodeName_XX": "string",
+                  "CVCP_ControlCodeSortNo_XX": 0,
+                  "CVCP_ControlGroupDetailName_XX": "string",
+                  "CVCP_ControlGroupName_XX": "string",
+                  "CVCP_ControlPropertyId": "string",
+                  "CVCP_ControlSettingName_XX": "string",
+                  "CVCP_CSCloneId": "string",
+                  "CVCP_CSID_XX": "string",
+                  "CVCP_CSSortNo_XX": 0,
+                  "CVCP_SortNo": 0,
+                }
+              ],
+              "CVCS_CloneId": "string",
+              "CVCS_BaseId_XX": "string",
+              "CVCS_CGDCloneId": "string",
+              "CVCS_CGDID_XX": "string",
+              "CVCS_CGDSortNo_XX": 0,
+              "CVCS_CGID_XX": "string",
+              "CVCS_ControlGroupDetailName_XX": "string",
+              "CVCS_ControlGroupName_XX": "string",
+              "CVCS_ControlSettingId": "string",
+              "CVCS_Name": "string",
+              "CVCS_Remark": "string",
+              "CVCS_SortNo": 0,
+            }
+          ],
+          "CVCGD_CloneId": "string",
+          "CVCGD_BaseId_XX": "string",
+          "CVCGD_CGCloneId": "string",
+          "CVCGD_CGID_XX": "string",
+          "CVCGD_ControlGroupDetailId": "string",
+          "CVCGD_ControlGroupName_XX": "string",
+          "CVCGD_Enabled": "string",
+          "CVCGD_EnabledName_XX": "string",
+          "CVCGD_Name": "string",
+          "CVCGD_SortNo": 0,
+        }
+      ],
+      "CVCG_CloneId": "string",
+      "CVCG_ActInspector": "string",
+      "CVCG_ActRecorder": "string",
+      "CVCG_BaseId": "string",
+      "CVCG_ControlGroupId": "string",
+      "CVCG_Enabled": "string",
+      "CVCG_EnabledName_XX": "string",
+      "CVCG_Kind": "string",
+      "CVCG_KindName_XX": "string",
+      "CVCG_Name": "string",
+      "CVCG_ReName": "string",
+    }
+  ],
+  "Success": true,
+  "Code": "string",
+  "Message": "string",
+  "DataTime": "2026-04-05T01:29:03.368Z",
+  "TotalCount": 0
+}
+```
 

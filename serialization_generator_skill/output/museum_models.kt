@@ -1,4 +1,4 @@
-
+/** added by elite_lin - 2026/04/01 */
 interface MuseumSortItemDelegate {
     /**  */
     val theColumnName: String
@@ -6,15 +6,21 @@ interface MuseumSortItemDelegate {
     val theDirection: String
 }
 
-interface MuseumQueryModelDelegate {
+
+/** added by elite_lin - 2026/04/01 */
+interface MuseumCvBaseQueryModelDelegate : KeywordQueryModelDelegate {
     /**  */
     val theBaseId: String
     /**  */
-    val theRecordId: String
+    val theYear: Int?
+    /**  */
+    val theSecondary: Int?
     /**  */
     val theAccessionNumber: String
     /**  */
     val theAccessionNumber2: String
+    /**  */
+    val theViewReasonCode: String
     /**  */
     val theAuthor: String
     /**  */
@@ -25,10 +31,6 @@ interface MuseumQueryModelDelegate {
     val theKindChildren: String
     /**  */
     val theLevel: String
-    /**  */
-    val theYyyy: Float?
-    /**  */
-    val theSecondary: Float?
     /**  */
     val theBeginDate: String
     /**  */
@@ -36,8 +38,6 @@ interface MuseumQueryModelDelegate {
     /**  */
     val theGalleryCode: String
     /**  */
-    val theViewReasonCode: String
-    /**  */
     val theBaseDetail2Id: String
     /**  */
     val theSerialNumber: String
@@ -47,276 +47,322 @@ interface MuseumQueryModelDelegate {
     val theSemicolon: String
     /**  */
     val theStatus: String
-    /**  */
-    val theForm: String
-    /**  */
-    val theRequestKey: String
-    /**  */
-    val theKeyword: String
-    /**  */
-    val theCreatorId: String
-    /**  */
-    val theCreatorCode: String
-    /**  */
-    val theCreatorName: String
-    /**  */
-    val theCreateDate: String
-    /**  */
-    val theCreateDateFrom: String
-    /**  */
-    val theCreateDateTo: String
-    /**  */
-    val theUpdaterId: String
-    /**  */
-    val theUpdaterCode: String
-    /**  */
-    val theUpdaterName: String
-    /**  */
-    val theUpdateDate: String
-    /**  */
-    val theUpdateDateFrom: String
-    /**  */
-    val theUpdateDateTo: String
-    /**  */
-    val theQueryLevel: String
-    /**  */
-    val theReportType: Float?
-    /**  */
-    val theReportId: String
-    /**  */
-    val theExportName: String
-    /**  */
-    val theReportTitle: String
-    /**  */
-    val theReportSourceType: Float?
-    /**  */
-    val theReportPrintMethod: String
-    /**  */
-    val theReportScheduleDate: String
-    /**  */
-    val theReportScheduleHour: Float?
-    /**  */
-    val theReportScheduleMin: Float?
-    /**  */
-    val theClientMessage: String
-    /**  */
-    val thePageIndex: Float?
-    /**  */
-    val thePageSize: Float?
-    /**  */
-    val theSort: List<MuseumSortItemDelegate>
+
+//    /**  */
+//    val thePageIndex: Float?
+//    /**  */
+//    val thePageSize: Float?
+//    /**  */
+//    val theSort: List<MuseumSortItemDelegate>
 }
 
-interface MuseumGalleryItemDelegate {
+
+/** added by elite_lin - 2026/04/01 */
+fun MuseumCvBaseQueryModelDelegate.buildList1QueryParameterExt() : String {
+    val stringBuilder = StringBuilder()
+        .append("?galleryId=${this@buildList1QueryParameterExt.theGalleryId}")
+    return stringBuilder.toString()
+}
+
+
+/** added by elite_lin - 2026/04/01 */
+interface MuseumCvBaseItemDelegate: CvBaseDisplayAccessionNumberDelegate {
     /**  */
     val theBaseId: String
+    /** Ntcam only; Ntmofa does not have */
+    val theYearStr: String
+    /**  */
+    val theYear: Int?
+    /**  */
+    val theSecondary: Int?
     /**  */
     val theAccessionNumber: String
     /**  */
-    val theAccessionNumberXx: String
+    val theAccessionNumberXX: String
     /**  */
     val theAccessionNumber2: String
-    /**  */
-    val theAuthCode: String
-    /**  */
-    val theAuthor: String
-    /**  */
-    val theBaseMaterial: String
-    /**  */
-    val theCarrier: String
-    /**  */
-    val theCode: String
-    /**  */
-    val theCreateDate: String
-    /**  */
-    val theCreatorId: String
-    /**  */
-    val theCreatorNameXx: String
-    /**  */
-    val theDigitizeDate: String
-    /**  */
-    val theDigitizePerson: String
-    /**  */
-    val theDimensionX: Float?
-    /**  */
-    val theDimensionY: Float?
-    /**  */
-    val theDimensionZ: Float?
-    /**  */
-    val theEdition: String
-    /**  */
-    val theEnAuthor: String
-    /**  */
-    val theEnWritName: String
-    /**  */
-    val theFramedForm: String
-    /**  */
-    val theGalleryCodeXx: String
-    /**  */
-    val theGalleryId: String
-    /**  */
-    val theHeight: Float?
-    /**  */
-    val theImageUrl: String
-    /**  */
-    val theInspector: String
-    /**  */
-    val theIsFrame: String
-    /**  */
-    val theKind: String
-    /**  */
-    val theKindChildren: String
-    /**  */
-    val theKindMainXx: String
-    /**  */
-    val theKindNameXx: String
-    /**  */
-    val theKindRemark: String
-    /**  */
-    val theLength: Float?
-    /**  */
-    val theLevel: String
-    /**  */
-    val theLoc1: String
-    /**  */
-    val theLoc2: String
-    /**  */
-    val theLoc3: String
-    /**  */
-    val theLoc4: String
-    /**  */
-    val theMainQty: Float?
-    /**  */
-    val theMediaLength: Float?
-    /**  */
-    val theMountingMaterialH: Float?
-    /**  */
-    val theMountingMaterialL: Float?
-    /**  */
-    val theMountingMaterialW: Float?
-    /**  */
-    val thePartsQty: Float?
-    /**  */
-    val theProtectiveMeasures: String
-    /**  */
-    val theRecorder: String
-    /**  */
-    val theRemark: String
-    /**  */
-    val theScreenProtect: String
-    /**  */
-    val theSecondary: Float?
-    /**  */
-    val theSemicolon: String
-    /**  */
-    val theSerialNumber: String
-    /**  */
-    val theSizeDesc: String
-    /**  */
-    val theSource: String
-    /**  */
-    val theSourceXx: String
-    /**  */
-    val theStatus: String
-    /**  */
-    val theStatusNameXx: String
-    /**  */
-    val theStorageLocation: String
-    /**  */
-    val theUpdateDate: String
-    /**  */
-    val theUpdaterId: String
-    /**  */
-    val theUpdaterNameXx: String
+
     /**  */
     val theViewDate: String
     /**  */
     val theViewReason: String
+    /** XX */
+    val theViewReasonCode: String
+    /** XX */
+    val theViewReasonName: String
+
     /**  */
-    val theViewReasonCodeXx: String
+    val theGalleryId: String
+    /** XX */
+    val theGalleryCode: String
+
     /**  */
-    val theViewReasonNameXx: String
+    val theAuthor: String
     /**  */
-    val theWeight: Float?
+    val theAuthCode: String
     /**  */
-    val theWidth: Float?
+    val theEngAuthor: String
+
     /**  */
     val theWritName: String
     /**  */
-    val theYears: String
+    val theEngWritName: String
+
     /**  */
-    val theYyyy: Float?
+    val theSource: String
+    /** Ntcam only; Ntmofa does not have */
+    val theSourceXX: String
+    /**  */
+    val theSerialNumber: String
+
+    /**  */
+    val theKind: String
+    /** XX */
+    val theKindMain: String
+    /** XX */
+    val theKindName: String
+    /**  */
+    val theKindChildren: String
+    /** Ntcam only; Ntmofa does not have */
+    val theKindRemark: String
+
+    /**  */
+    val theInspector: String
+    /**  */
+    val theRecorder: String
+
+    /**  */
+    val theSemicolon: String
+    /**  */
+    val theStorageLocation: String
+
+    /**  */
+    val theStatus: String
+    /** XX */
+    val theStatusName: String
+
+    /**  */
+    val theLevel: String
+    /**  */
+    val theRemark: String
+    /**  */
+    val theIsFrame: String
+
+    ///
+//    /**  */
+//    val theBaseMaterial: String
+//    /**  */
+//    val theCarrier: String
+//    /**  */
+//    val theCode: String
+//    /**  */
+//    val theDigitizeDate: String
+//    /**  */
+//    val theDigitizePerson: String
+//    /**  */
+//    val theDimensionX: Float?
+//    /**  */
+//    val theDimensionY: Float?
+//    /**  */
+//    val theDimensionZ: Float?
+//    /**  */
+//    val theEdition: String
+//
+//    /**  */
+//    val theFramedForm: String
+//
+//    /**  */
+//    val theImageUrl: String
+//
+//    /**  */
+//    val theLocation1: String
+//    /**  */
+//    val theLocation2: String
+//    /**  */
+//    val theLocation3: String
+//    /**  */
+//    val theLocation4: String
+//    /**  */
+//    val theMainQty: Float?
+//    /**  */
+//    val theMediaLength: Float?
+//    /**  */
+//    val theMountingMaterialH: Float?
+//    /**  */
+//    val theMountingMaterialL: Float?
+//    /**  */
+//    val theMountingMaterialW: Float?
+//    /**  */
+//    val thePartsQty: Float?
+//    /**  */
+//    val theProtectiveMeasures: String
+//    /**  */
+//    val theScreenProtect: String
+//
+//    /**  */
+//    val theSizeDesc: String
+//    /**  */
+//    val theLength: Float?
+//    /**  */
+//    val theWidth: Float?
+//    /**  */
+//    val theHeight: Float?
+//    /**  */
+//    val theWeight: Float?
+
 }
 
-interface MuseumAuthorDelegate {
+
+/** added by elite_lin - 2026/04/04 */
+data class MuseumCvBaseItemImpl(
+    /** 流水號 */
+    override val theBaseId: String = "",
+
+    override val theYearStr: String = "",
+    /** 會議年度 */
+    override val theYear: Int? = 0,
+    /** 會議次別 */
+    override val theSecondary: Int? = 0,
+    /** 登錄號 */
+    override val theAccessionNumber: String = "",
+    /** 登錄號 */
+    override val theAccessionNumberXX: String = "",
+    /** 整飭登錄號 */
+    override val theAccessionNumber2: String = "",
+
+    /** 檢視日期 */
+    override val theViewDate: String = "",
+    /** 檢視原由 */
+    override val theViewReason: String = "",
+    /** 檢視原由代碼 */
+    override val theViewReasonCode: String = "",
+    /** 檢視原由名稱 */
+    override val theViewReasonName: String = "",
+
+    /** 藏品流水號 */
+    override val theGalleryId: String = "",
+    /** 藏品登錄號 */
+    override val theGalleryCode: String = "",
+
+    /** 作者(代碼) */
+    override val theAuthCode: String = "",
+    /** 作者 */
+    override val theAuthor: String = "",
+    /** 作者(英文) */
+    override val theEngAuthor: String = "",
+
+    /** 作品 */
+    override val theWritName: String = "",
+    /** 作品(英文) */
+    override val theEngWritName: String = "",
+
+    /** 來源 */
+    override val theSource: String = "",
+
+    override val theSourceXX: String = "",
+    /** 編號 (組件號) */
+    override val theSerialNumber: String = "",
+
+    /**
+     * 檢視類型
+     * * V：點檢單
+     * * O：出庫單
+     */
+    override val theKind: String = "",
+    // [start] added by elite_lin - 2025/06/10
+    /**
+     * 檢視類型 - 主類別
+     * * 東方媒材類: A
+     * * 西洋媒材類: B
+     * * 版畫類: C
+     * * 雕塑類: D
+     * * 工藝美術類: E
+     * * 觀念藝術類: F
+     * * 應用美術類: G
+     * * 影像類: H
+     * * 陶藝類: I
+     * * 當代藝術類: J
+     * * 其它類: Z
+     */
+    override val theKindMain: String = "",
+    // [end] added by elite_lin - 2025/06/10
+    /** 檢視類型名稱 */
+    override val theKindName: String = "",
+    /** 檢視類型 - 子類別 */
+    override val theKindChildren: String = "",
+
+    override val theKindRemark: String = "",
+
+    /** 檢視人員 */
+    override val theInspector: String = "",
+    /** 記錄者 */
+    override val theRecorder: String = "",
+
+    /** 組件分號 */
+    override val theSemicolon: String = "",
+    /** 庫藏位置 */
+    override val theStorageLocation: String = "",
+    /** 狀態: V: 檢視; N: 預設(填寫) */
+    override val theStatus: String = "",
+    /** 狀態 */
+    override val theStatusName: String = "",
+    /** 現況等級 */
+    override val theLevel: String = "",
+    /** 備註 */
+    override val theRemark: String = "",
+    /** 是否裝裱 */
+    override val theIsFrame: String = "",
+
+    override val theDisplayAccessionNumber: String = "",
+) : MuseumCvBaseItemDelegate
+
+
+/** added by elite_lin - 2026/04/01 */
+interface MuseumCvAuthorItemDelegate {
     /**  */
     val theAuthorId: String
     /**  */
     val theBaseId: String
     /**  */
-    val theCreateDate: String
-    /**  */
-    val theCreatorId: String
-    /**  */
-    val theCreatorNameXx: String
-    /**  */
     val theDocuments: String
     /**  */
     val theDocuments2: String
     /**  */
-    val theExhibitRecord: String
+    val theProvider: String
+    /** XX */
+    val theIsProviderName: String
     /**  */
     val theGuarantee: String
     /**  */
+    val theExhibitRecord: String
+    /**  */
     val theInstallation: String
-    /**  */
-    val theIsProviderNameXx: String
-    /**  */
-    val theProvider: String
-    /**  */
-    val theUpdateDate: String
-    /**  */
-    val theUpdaterId: String
-    /**  */
-    val theUpdaterNameXx: String
+
 }
 
-interface MuseumDetail1Delegate {
+
+/** added by elite_lin - 2026/04/01 */
+interface MuseumCvBaseDetail1Delegate {
     /**  */
     val theBaseDetail1Id: String
     /**  */
     val theBaseId: String
     /**  */
-    val theCreateDate: String
-    /**  */
-    val theCreatorId: String
-    /**  */
-    val theCreatorNameXx: String
-    /**  */
     val theGalleryContentId: String
-    /**  */
-    val theRemark: String
     /**  */
     val theSemicolon: String
     /**  */
-    val theUpdateDate: String
-    /**  */
-    val theUpdaterId: String
-    /**  */
-    val theUpdaterNameXx: String
+    val theRemark: String
+
 }
 
-interface MuseumDetail2Delegate {
+
+/** added by elite_lin - 2026/04/01 */
+interface MuseumCvBaseDetail2Delegate {
     /**  */
     val theBaseDetail2Id: String
     /**  */
     val theBaseId: String
-    /**  */
-    val theCreateDate: String
-    /**  */
-    val theCreatorId: String
-    /**  */
-    val theCreatorNameXx: String
     /**  */
     val theIsBack: String
     /**  */
@@ -331,25 +377,14 @@ interface MuseumDetail2Delegate {
     val theSignature2: String
     /**  */
     val theSignature3: String
-    /**  */
-    val theUpdateDate: String
-    /**  */
-    val theUpdaterId: String
-    /**  */
-    val theUpdaterNameXx: String
+
 }
 
-interface MuseumAttachFileDelegate {
+
+/** added by elite_lin - 2026/04/01 */
+interface MuseumCvAttachFileItemDelegate {
     /**  */
     val theAttachFileId: String
-    /**  */
-    val theCreateDate: String
-    /**  */
-    val theCreatorCodeXx: String
-    /**  */
-    val theCreatorId: String
-    /**  */
-    val theCreatorNameXx: String
     /**  */
     val theFileName: String
     /**  */
@@ -366,17 +401,14 @@ interface MuseumAttachFileDelegate {
     val theRefId: String
     /**  */
     val theSize: Float?
-    /**  */
-    val theUpdateDate: String
-    /**  */
-    val theUpdaterCodeXx: String
-    /**  */
-    val theUpdaterId: String
-    /**  */
-    val theUpdaterNameXx: String
+
 }
 
-interface MuseumDetailInfoDelegate {
+
+/** added by elite_lin - 2026/04/01 */
+interface MuseumCvBaseNestedDetailItemDelegate {
+    /**  */
+    val theBaseId: String
     /**  */
     val theAccessionNumber: String
     /**  */
@@ -386,30 +418,166 @@ interface MuseumDetailInfoDelegate {
     /**  */
     val theNumber: String
     /**  */
-    val theBaseId: String
-    /**  */
     val theIsReView: String
     /**  */
     val theIsView: String
 }
 
-interface MuseumGalleryDetailItemDelegate : MuseumGalleryItemDelegate {
+
+/** added by elite_lin - 2026/04/01 */
+interface MuseumCvBaseItemExtDelegate : MuseumCvBaseItemDelegate {
     /**  */
-    val theChildrenAuthor: List<MuseumAuthorDelegate>
+    val theAuthors: List<MuseumCvAuthorItemDelegate>
     /**  */
-    val theChildrenDetail1: List<MuseumDetail1Delegate>
+    val theDetail1s: List<MuseumCvBaseDetail1Delegate>
     /**  */
-    val theChildrenDetail2: List<MuseumDetail2Delegate>
+    val theDetail2s: List<MuseumCvBaseDetail2Delegate>
     /**  */
-    val theChildrenAttachFile: List<MuseumAttachFileDelegate>
+    val theAttachedFiles: List<MuseumCvAttachFileItemDelegate>
     /**  */
-    val theViewReasonName: String
+    val theNestedDetails: List<MuseumCvBaseNestedDetailItemDelegate>
     /**  */
-    val theIsLock: String
+    val theViewReasonNameExt: String
     /**  */
-    val theIsView: String
+    val theIsLockExt: String
     /**  */
-    val theDetail: List<MuseumDetailInfoDelegate>
-    /**  */
-    val theSemicolonCount: Float?
+    val theIsViewExt: String
+    /** Ntcam used / Ntmofa does not have */
+    val theSemicolonCountExt: Float?
+
 }
+
+///
+
+interface ControlPropertyNestedDelegate {
+    val theControlPropertyItemId: String
+    val theRefCvBaseId: String
+    val theControlPropertySortNo: Int
+    val theCode: String
+    val theCodeGroupId: String
+    val theControlCode: String
+    val theDIndex: Int?
+    val theMIndex: Int?
+    ///
+    val theNodeId: String
+    val theParentId: String
+    val theSubject: String
+    val theType: String
+    val theUrl: String
+    val theUrlAction: String
+    val theFileMode: String
+    val theWidth: Int
+    val theHeight: Int
+    val theItemLabel: String
+    val theItemValue: String
+    val theItemSort: Int
+    val theRelactionClickValue: String
+    val theRelactionControl: String
+    val theRelactionControlName: String
+    val theRelactionValue: String
+    val theRows: Int
+}
+
+
+interface CvControlPropertyNestedDelegate : ControlPropertyNestedDelegate,
+    QuestionOptionTypeDelegate, QuestionOptionLabelDelegate, DirtySyncDelegate {
+    ///
+//    val theControlPropertyItemId: String
+//    val theRefCvBaseId: String
+
+    val theRefCvControlGroupId: String
+    val theControlGroupName: String
+
+    val theRefCvControlGroupDetailId: String
+    val theControlGroupDetailName: String
+    val theControlGroupDetailSortNo: Int
+
+    val theRefCvControlSettingId: String
+    val theControlSettingName: String
+    val theControlSettingSortNo: Int
+
+    val theRefCvControlPropertyId: String
+    val theRefCvCpId: String
+//    val theControlPropertySortNo: Int
+
+    ///
+    val theIndex: Int
+    val theRecordValue: String?
+    val theRefSyControlPropertyItemId: String
+    val theRefSyControlPropertyId: String
+    ///
+}
+
+///
+
+/** revision by elite_lin - 2025/08/22 */
+interface CvControlGroupIdRenameDelegate : DirtySyncDelegate {
+    val theRename: String
+}
+
+
+/** revision by elite_lin - 2025/08/22 */
+interface CvControlGroupDelegate : SyControlGroupDelegate, CvControlGroupIdRenameDelegate {
+    //val theControlGroupId: String
+    val theRefSyControlGroupId: String
+    val theRefCvBaseId: String
+    val theActInspector: String
+    val theActRecorder: String
+    //val theRename: String
+}
+
+
+interface CvControlGroupDetailDelegate : SyncedAtDelegate {
+    val theControlGroupDetailId: String
+    val theRefCvControlGroupId: String
+    val theRefCvCgId: String
+    val theRefCvBaseId: String
+    val theControlGroupName: String
+    val theRefSyControlGroupDetailId: String
+    val theName: String
+    val theSortNo: Int
+    val theEnabled: String
+    val theEnabledName: String
+}
+
+
+interface CvControlSettingDelegate : SyncedAtDelegate {
+    val theControlSettingId: String
+    val theRefCvControlGroupDetailId: String
+    val theRefCvCgdId: String
+    val theRefCvCgId: String
+    val theRefCvBaseId: String
+    val theCvControlGroupDetailSortNo: Int
+    val theControlGroupName: String
+    val theControlGroupDetailName: String
+    val theRefSyControlSettingId: String
+    val theName: String
+    val theRemark: String
+    val theSortNo: Int
+}
+
+
+interface CvControlPropertyDelegate : SyncedAtDelegate {
+    val theControlPropertyId: String
+    val theControlPropertySortNo: Int
+    val theRefCvControlSettingId: String
+    val theRefCvCsId: String
+    val theControlControlSettingSortNo: Int
+    val theRefCvControlGroupDetailId: String
+    val theControlGroupDetailName: String
+    val theControlGroupDetailSortNo: Int
+    val theRefCvControlGroupId: String
+    val theControlGroupName: String
+    val theRefCvBaseId: String
+    val theRefSyControlPropertyId: String
+    val theRefSyControlCodeId: String
+    val theControlCode: String
+    val theControlCodeName: String
+    val theControlCodeSortNo: Int
+    val theControlSettingName: String
+    val theControlCodeGroupId: String
+    val theControlCodeGroupName: String
+    val theControlCodeGroupSortNo: Int
+}
+
+
