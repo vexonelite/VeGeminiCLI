@@ -729,10 +729,514 @@ data class WtcCvBaseItemListResponse(
 ) : BaseRestfulApiResponse()
 
 
-/** added by elite_lin - 2026/04/01 */
+/** added by elite_lin - 2026/04/05 */
+ok
 @Serializable
-data class WtcCvBaseItemExtListResponse(
-    @SerializedName("Data") @SerialName("Data") val theData: List<WtcCvBaseItemExt> = listOf(),
+data class WtcControlGroupQuery(
+    /**  */
+    @SerializedName("Q_CloneId") @SerialName("Q_CloneId")
+    override val theCloneId: String = "",
+    /**  */
+    @SerializedName("Q_BaseID") @SerialName("Q_BaseID")
+    override val theBaseId: String = "",
+    /**  */
+    @SerializedName("Q_ControlGroupId") @SerialName("Q_ControlGroupId")
+    override val theControlGroupId: String = "",
+    /**  */
+    @SerializedName("Q_Kind") @SerialName("Q_Kind")
+    override val theKind: String = "",
+    /**  */
+    @SerializedName("Q_KindName") @SerialName("Q_KindName")
+    override val theKindName: String = "",
+    /**  */
+    @SerializedName("Q_Name") @SerialName("Q_Name")
+    override val theName: String = "",
+    /**  */
+    @SerializedName("Q_ReName") @SerialName("Q_ReName")
+    override val theReName: String = "",
+    /**  */
+    @SerializedName("Q_Enabled") @SerialName("Q_Enabled")
+    override val theEnabled: String = "",
+    /**  */
+    @SerializedName("Q_EnabledName") @SerialName("Q_EnabledName")
+    override val theEnabledName: String = "",
+    /**  */
+    @SerializedName("Q_Keyword") @SerialName("Q_Keyword")
+    override val theKeyword: String = "",
+    /**  */
+    @SerializedName("Q_QueryLevel") @SerialName("Q_QueryLevel")
+    override val theQueryLevel: String = "",
+    /**  */
+    @SerializedName("Q_PageIndex") @SerialName("Q_PageIndex")
+    override val thePageIndex: Float? = null,
+    /**  */
+    @SerializedName("Q_PageSize") @SerialName("Q_PageSize")
+    override val thePageSize: Float? = null,
+    /**  */
+    @SerializedName("Sort") @SerialName("Sort")
+    override val theSort: List<FmMuseumSortItem> = listOf()
+) : MuseumCvControlGroupQueryDelegate
+
+
+/** added by elite_lin - 2026/04/05 */
+ok
+@Serializable
+data class WtcControlGroup(
+    /**  */
+    @SerializedName("CVCG_CloneId") @SerialName("CVCG_CloneId")
+    override val theCloneId: String = "",
+    /**  */
+    @SerializedName("CVCG_ActInspector") @SerialName("CVCG_ActInspector")
+    override val theActInspector: String = "",
+    /**  */
+    @SerializedName("CVCG_ActRecorder") @SerialName("CVCG_ActRecorder")
+    override val theActRecorder: String = "",
+    /**  */
+    @SerializedName("CVCG_BaseId") @SerialName("CVCG_BaseId")
+    override val theBaseId: String = "",
+    /**  */
+    @SerializedName("CVCG_ControlGroupId") @SerialName("CVCG_ControlGroupId")
+    override val theControlGroupId: String = "",
+    /**  */
+    @SerializedName("CVCG_Enabled") @SerialName("CVCG_Enabled")
+    override val theEnabled: String = "",
+    /**  */
+    @SerializedName("CVCG_EnabledName_XX") @SerialName("CVCG_EnabledName_XX")
+    override val theEnabledName: String = "",
+    /**  */
+    @SerializedName("CVCG_Kind") @SerialName("CVCG_Kind")
+    override val theKind: String = "",
+    /**  */
+    @SerializedName("CVCG_KindName_XX") @SerialName("CVCG_KindName_XX")
+    override val theKindName: String = "",
+    /**  */
+    @SerializedName("CVCG_Name") @SerialName("CVCG_Name")
+    override val theName: String = "",
+    /**  */
+    @SerializedName("CVCG_ReName") @SerialName("CVCG_ReName")
+    override val theReName: String = "",
+    /**  */
+    @SerializedName("Children_ControlGroupDetail") @SerialName("Children_ControlGroupDetail")
+    override val theChildrenControlGroupDetails: List<WtcControlGroupDetail> = listOf()
+) : MuseumCvControlGroupDelegate
+
+
+/** added by elite_lin - 2026/04/05 */
+@Serializable
+data class WtcControlGroupDetail(
+    /**  */
+    @SerializedName("CVCGD_CloneId") @SerialName("CVCGD_CloneId")
+    override val theCloneId: String = "", // theControlGroupDetailId
+
+    /** Reference to ``CvBase.CVB_BaseID */
+    @SerializedName("CVCGD_BaseId_XX") @SerialName("CVCGD_BaseId_XX")
+    override val theBaseId: String = "", //theRefCvBaseId
+
+    /** Reference to ``CvControlGroup.CVCG_CloneId */
+    @SerializedName("CVCGD_CGCloneId") @SerialName("CVCGD_CGCloneId")
+    override val theCGCloneId: String = "", //theRefCvControlGroupId
+
+    /** Reference to ``CvControlGroup.CVCG_CloneId */
+    @SerializedName("CVCGD_CGID_XX") @SerialName("CVCGD_CGID_XX")
+    override val theCGID: String = "", // theRefCvCgId
+
+    /** Reference to ``SyControlGroupDetail.SYCGD_ControlGroupDetailId.`` */
+    @SerializedName("CVCGD_ControlGroupDetailId") @SerialName("CVCGD_ControlGroupDetailId")
+    override val theControlGroupDetailId: String = "",  // theRefSyControlGroupDetailId
+
+    /**  */
+    @SerializedName("CVCGD_ControlGroupName_XX") @SerialName("CVCGD_ControlGroupName_XX")
+    override val theControlGroupName: String = "",
+    /**  */
+    @SerializedName("CVCGD_Enabled") @SerialName("CVCGD_Enabled")
+    override val theEnabled: String = "",
+    /**  */
+    @SerializedName("CVCGD_EnabledName_XX") @SerialName("CVCGD_EnabledName_XX")
+    override val theEnabledName: String = "",
+    /**  */
+    @SerializedName("CVCGD_Name") @SerialName("CVCGD_Name")
+    override val theName: String = "",
+    /**  */
+    @SerializedName("CVCGD_SortNo") @SerialName("CVCGD_SortNo")
+    override val theSortNo: Float? = null,
+    /**  */
+    @SerializedName("Children_ControlSetting") @SerialName("Children_ControlSetting")
+    override val theChildrenControlSettings: List<WtcControlSetting> = listOf()
+) : MuseumCvControlGroupDetailDelegate
+
+
+/** added by elite_lin - 2026/04/05 */
+@Serializable
+data class WtcControlSetting(
+    /**  */
+    @SerializedName("CVCS_CloneId") @SerialName("CVCS_CloneId")
+    override val theCloneId: String = "",  //theControlSettingId
+
+    /** Reference to ``CvBase.CVB_BaseID */
+    @SerializedName("CVCS_BaseId_XX") @SerialName("CVCS_BaseId_XX")
+    override val theBaseId: String = "",  // theRefCvBaseId
+
+    /** Reference to ``CvControlGroupDetail.CVCGD_CloneId`` */
+    @SerializedName("CVCS_CGDCloneId") @SerialName("CVCS_CGDCloneId")
+    override val theCGDCloneId: String = "", // theRefCvControlGroupDetailId
+
+    /** Reference to ``CvControlGroupDetail.CVCGD_CloneId`` */
+    @SerializedName("CVCS_CGDID_XX") @SerialName("CVCS_CGDID_XX")
+    override val theCGDID: String = "",  // theRefCvCgdId
+
+    /** Reference to ``CvControlGroup.CVCG_CloneId`` */
+    @SerializedName("CVCS_CGID_XX") @SerialName("CVCS_CGID_XX")
+    override val theCGID: String = "",
+
+    /** Reference to ``SyControlSetting.SYCS_ControlSettingId`` */
+    @SerializedName("CVCS_ControlSettingId") @SerialName("CVCS_ControlSettingId")
+    override val theControlSettingId: String = "",  // theRefSyControlSettingId
+
+    /**  */
+    @SerializedName("CVCS_CGDSortNo_XX") @SerialName("CVCS_CGDSortNo_XX")
+    override val theCGDSortNo: Float? = null,  // theCvControlGroupDetailSortNo
+
+    /**  */
+    @SerializedName("CVCS_ControlGroupName_XX") @SerialName("CVCS_ControlGroupName_XX")
+    override val theControlGroupName: String = "",
+
+    /**  */
+    @SerializedName("CVCS_ControlGroupDetailName_XX") @SerialName("CVCS_ControlGroupDetailName_XX")
+    override val theControlGroupDetailName: String = "",
+
+    /**  */
+    @SerializedName("CVCS_Name") @SerialName("CVCS_Name")
+    override val theName: String = "",
+    /**  */
+    @SerializedName("CVCS_Remark") @SerialName("CVCS_Remark")
+    override val theRemark: String = "",
+    /**  */
+    @SerializedName("CVCS_SortNo") @SerialName("CVCS_SortNo")
+    override val theSortNo: Float? = null,
+    
+    /**  */
+    @SerializedName("Children_ControlProperty") @SerialName("Children_ControlProperty")
+    override val theChildrenControlProperties: List<WtcControlProperty> = listOf()
+) : MuseumCvControlSettingDelegate
+
+
+/** added by elite_lin - 2026/04/05 */
+@Serializable
+data class WtcControlProperty(
+    /**  */
+    @SerializedName("CVCP_CloneId") @SerialName("CVCP_CloneId")
+    override val theCloneId: String = "",  // theControlPropertyId
+
+    /** Reference to ``CvBase.CVB_BaseID */
+    @SerializedName("CVCP_BaseId_XX") @SerialName("CVCP_BaseId_XX")
+    override val theBaseId: String = "", // theRefCvBaseId
+
+    /** Reference to ``CvControlGroup.CVCG_CloneId`` */
+    @SerializedName("CVCP_CGID_XX") @SerialName("CVCP_CGID_XX")
+    override val theCGID: String = "",  // theRefCvControlGroupId
+
+    /** Reference to ``CvControlGroupDetail.CVCGD_CloneId`` */
+    @SerializedName("CVCP_CGDID_XX") @SerialName("CVCP_CGDID_XX")
+    override val theCGDID: String = "", theRefCvControlGroupDetailId
+
+    /** Reference to ``CvControlSetting.CVCS_CloneId */
+    @SerializedName("CVCP_CSCloneId") @SerialName("CVCP_CSCloneId")
+    override val theCSCloneId: String = "", // theRefCvControlSettingId
+
+    /** Reference to ``CvControlSetting.CVCS_CloneId */
+    @SerializedName("CVCP_CSID_XX") @SerialName("CVCP_CSID_XX")
+    override val theCSID: String = "", // theRefCvCsId
+
+    /** Reference to ``SyControlProperty.SYCP_ControlPropertyId */
+    @SerializedName("CVCP_ControlPropertyId") @SerialName("CVCP_ControlPropertyId")
+    override val theControlPropertyId: String = "", // theRefSyControlPropertyId
+
+    /** Reference to ``SyControlCode.SYCC_ControlCodeId */
+    @SerializedName("CVCP_ControlCodeId") @SerialName("CVCP_ControlCodeId")
+    override val theControlCodeId: String = "", // theRefSyControlCodeId
+
+    /**  */
+    @SerializedName("CVCP_ControlGroupName_XX") @SerialName("CVCP_ControlGroupName_XX")
+    override val theControlGroupName: String = "",
+
+    /**  */
+    @SerializedName("CVCP_ControlGroupDetailName_XX") @SerialName("CVCP_ControlGroupDetailName_XX")
+    override val theControlGroupDetailName: String = "",
+    /**  */
+    @SerializedName("CVCP_CGDSortNo_XX") @SerialName("CVCP_CGDSortNo_XX")
+    override val theCGDSortNo: Float? = null,  // theControlGroupDetailSortNo
+
+    /**  */
+    @SerializedName("CVCP_ControlSettingName_XX") @SerialName("CVCP_ControlSettingName_XX")
+    override val theControlSettingName: String = "",
+    /**  */
+    @SerializedName("CVCP_CSSortNo_XX") @SerialName("CVCP_CSSortNo_XX")
+    override val theCSSortNo: Float? = null,  // theControlControlSettingSortNo
+
+    /**  */
+    @SerializedName("CVCP_SortNo") @SerialName("CVCP_SortNo")
+    override val theSortNo: Float? = null,  //theControlPropertySortNo
+
+    /**  */
+    @SerializedName("CVCP_ControlCode_XX") @SerialName("CVCP_ControlCode_XX")
+    override val theControlCode: String = "",
+    /**  */
+    @SerializedName("CVCP_ControlCodeName_XX") @SerialName("CVCP_ControlCodeName_XX")
+    override val theControlCodeName: String = "",
+    /**  */
+    @SerializedName("CVCP_ControlCodeSortNo_XX") @SerialName("CVCP_ControlCodeSortNo_XX")
+    override val theControlCodeSortNo: Float? = null,
+    
+    /**  */
+    @SerializedName("CVCP_ControlCodeGroupId") @SerialName("CVCP_ControlCodeGroupId")
+    override val theControlCodeGroupId: String = "",
+    /**  */
+    @SerializedName("CVCP_ControlCodeGroupName_XX") @SerialName("CVCP_ControlCodeGroupName_XX")
+    override val theControlCodeGroupName: String = "",
+    /**  */
+    @SerializedName("CVCP_ControlCodeGroupSortNo_XX") @SerialName("CVCP_ControlCodeGroupSortNo_XX")
+    override val theControlCodeGroupSortNo: Float? = null,
+
+    /**  */
+    @SerializedName("Children_ControlCode") @SerialName("Children_ControlCode")
+    override val theChildrenControlCodes: List<WtcControlCode> = listOf(),
+    /**  */
+    @SerializedName("Children_ControlCodeGroup") @SerialName("Children_ControlCodeGroup")
+    override val theChildrenControlCodeGroups: List<WtcControlCodeGroup> = listOf(),
+    /**  */
+    @SerializedName("Children_ControlPropertyItem") @SerialName("Children_ControlPropertyItem")
+    override val theChildrenControlPropertyItems: List<WtcControlPropertyItem> = listOf()
+) : MuseumCvControlPropertyDelegate
+
+
+/** added by elite_lin - 2026/04/05 */
+@Serializable
+data class WtcControlPropertyItem(
+    /**  */
+    @SerializedName("CVCPI_CloneId") @SerialName("CVCPI_CloneId")
+    override val theCloneId: String = "",
+    /**  */
+    @SerializedName("CVCPI_BaseId_XX") @SerialName("CVCPI_BaseId_XX")
+    override val theBaseId: String = "",
+    /**  */
+    @SerializedName("CVCPI_CGDID_XX") @SerialName("CVCPI_CGDID_XX")
+    override val theCGDID: String = "",
+    /**  */
+    @SerializedName("CVCPI_CGDSortNo_XX") @SerialName("CVCPI_CGDSortNo_XX")
+    override val theCGDSortNo: Float? = null,
+    /**  */
+    @SerializedName("CVCPI_CGID_XX") @SerialName("CVCPI_CGID_XX")
+    override val theCGID: String = "",
+    /**  */
+    @SerializedName("CVCPI_Code") @SerialName("CVCPI_Code")
+    override val theCode: String = "",
+    /**  */
+    @SerializedName("CVCPI_CodeGroupId") @SerialName("CVCPI_CodeGroupId")
+    override val theCodeGroupId: String = "",
+    /**  */
+    @SerializedName("CVCPI_ControlCode_XX") @SerialName("CVCPI_ControlCode_XX")
+    override val theControlCode: String = "",
+    /**  */
+    @SerializedName("CVCPI_ControlGroupDetailName_XX") @SerialName("CVCPI_ControlGroupDetailName_XX")
+    override val theControlGroupDetailName: String = "",
+    /**  */
+    @SerializedName("CVCPI_ControlGroupName_XX") @SerialName("CVCPI_ControlGroupName_XX")
+    override val theControlGroupName: String = "",
+    /**  */
+    @SerializedName("CVCPI_ControlPropertyId") @SerialName("CVCPI_ControlPropertyId")
+    override val theControlPropertyId: String = "",
+    /**  */
+    @SerializedName("CVCPI_ControlPropertyItemId") @SerialName("CVCPI_ControlPropertyItemId")
+    override val theControlPropertyItemId: String = "",
+    /**  */
+    @SerializedName("CVCPI_ControlSettingName_XX") @SerialName("CVCPI_ControlSettingName_XX")
+    override val theControlSettingName: String = "",
+    /**  */
+    @SerializedName("CVCPI_CPCloneId") @SerialName("CVCPI_CPCloneId")
+    override val theCPCloneId: String = "",
+    /**  */
+    @SerializedName("CVCPI_CPID_XX") @SerialName("CVCPI_CPID_XX")
+    override val theCPID: String = "",
+    /**  */
+    @SerializedName("CVCPI_CPSortNo_XX") @SerialName("CVCPI_CPSortNo_XX")
+    override val theCPSortNo: Float? = null,
+    /**  */
+    @SerializedName("CVCPI_CSID_XX") @SerialName("CVCPI_CSID_XX")
+    override val theCSID: String = "",
+    /**  */
+    @SerializedName("CVCPI_CSSortNo_XX") @SerialName("CVCPI_CSSortNo_XX")
+    override val theCSSortNo: Float? = null,
+    /**  */
+    @SerializedName("CVCPI_DIndex") @SerialName("CVCPI_DIndex")
+    override val theDIndex: Float? = null,
+    /**  */
+    @SerializedName("CVCPI_FileMode") @SerialName("CVCPI_FileMode")
+    override val theFileMode: String = "",
+    /**  */
+    @SerializedName("CVCPI_Height") @SerialName("CVCPI_Height")
+    override val theHeight: Float? = null,
+    /**  */
+    @SerializedName("CVCPI_Index") @SerialName("CVCPI_Index")
+    override val theIndex: Float? = null,
+    /**  */
+    @SerializedName("CVCPI_ItemLabel") @SerialName("CVCPI_ItemLabel")
+    override val theItemLabel: String = "",
+    /**  */
+    @SerializedName("CVCPI_ItemSort") @SerialName("CVCPI_ItemSort")
+    override val theItemSort: Float? = null,
+    /**  */
+    @SerializedName("CVCPI_ItemValue") @SerialName("CVCPI_ItemValue")
+    override val theItemValue: String = "",
+    /**  */
+    @SerializedName("CVCPI_MIndex") @SerialName("CVCPI_MIndex")
+    override val theMIndex: Float? = null,
+    /**  */
+    @SerializedName("CVCPI_NodeId") @SerialName("CVCPI_NodeId")
+    override val theNodeId: String = "",
+    /**  */
+    @SerializedName("CVCPI_ParentId") @SerialName("CVCPI_ParentId")
+    override val theParentId: String = "",
+    /**  */
+    @SerializedName("CVCPI_RecordValue") @SerialName("CVCPI_RecordValue")
+    override val theRecordValue: String = "",
+    /**  */
+    @SerializedName("CVCPI_RelactionClickValue") @SerialName("CVCPI_RelactionClickValue")
+    override val theRelactionClickValue: String = "",
+    /**  */
+    @SerializedName("CVCPI_RelactionControl") @SerialName("CVCPI_RelactionControl")
+    override val theRelactionControl: String = "",
+    /**  */
+    @SerializedName("CVCPI_RelactionControlName") @SerialName("CVCPI_RelactionControlName")
+    override val theRelactionControlName: String = "",
+    /**  */
+    @SerializedName("CVCPI_RelactionValue") @SerialName("CVCPI_RelactionValue")
+    override val theRelactionValue: String = "",
+    /**  */
+    @SerializedName("CVCPI_Rows") @SerialName("CVCPI_Rows")
+    override val theRows: Float? = null,
+    /**  */
+    @SerializedName("CVCPI_Subject") @SerialName("CVCPI_Subject")
+    override val theSubject: String = "",
+    /**  */
+    @SerializedName("CVCPI_Type") @SerialName("CVCPI_Type")
+    override val theType: String = "",
+    /**  */
+    @SerializedName("CVCPI_Url") @SerialName("CVCPI_Url")
+    override val theUrl: String = "",
+    /**  */
+    @SerializedName("CVCPI_UrlAction") @SerialName("CVCPI_UrlAction")
+    override val theUrlAction: String = "",
+    /**  */
+    @SerializedName("CVCPI_Width") @SerialName("CVCPI_Width")
+    override val theWidth: Float? = null
+) : MuseumCvControlPropertyItemDelegate
+
+
+/** added by elite_lin - 2026/04/05 */
+ok
+@Serializable
+data class WtcControlCode(
+    /**  */
+    @SerializedName("SYCC_ControlCodeId") @SerialName("SYCC_ControlCodeId")
+    override val theControlCodeId: String = "",
+    /**  */
+    @SerializedName("SYCC_Code") @SerialName("SYCC_Code")
+    override val theCode: String = "",
+    /**  */
+    @SerializedName("SYCC_Enabled") @SerialName("SYCC_Enabled")
+    override val theEnabled: String = "",
+    /**  */
+    @SerializedName("SYCC_EnabledName_XX") @SerialName("SYCC_EnabledName_XX")
+    override val theEnabledName: String = "",
+    /**  */
+    @SerializedName("SYCC_Icon") @SerialName("SYCC_Icon")
+    override val theIcon: String = "",
+    /**  */
+    @SerializedName("SYCC_Name") @SerialName("SYCC_Name")
+    override val theName: String = "",
+    /**  */
+    @SerializedName("SYCC_SortNo") @SerialName("SYCC_SortNo")
+    override val theSortNo: Float? = null
+) : MuseumCvControlCodeDelegate
+
+
+/** added by elite_lin - 2026/04/05 */
+@Serializable
+data class WtcControlCodeGroup(
+    /**  */
+    @SerializedName("CVCCG_CloneId") @SerialName("CVCCG_CloneId")
+    override val theCloneId: String = "",
+    /**  */
+    @SerializedName("CVCCG_ControlCodeGroupId") @SerialName("CVCCG_ControlCodeGroupId")
+    override val theControlCodeGroupId: String = "",
+    /**  */
+    @SerializedName("CVCCG_CPCloneId") @SerialName("CVCCG_CPCloneId")
+    override val theCPCloneId: String = "",
+    /**  */
+    @SerializedName("CVCCG_Enabled") @SerialName("CVCCG_Enabled")
+    override val theEnabled: String = "",
+    /**  */
+    @SerializedName("CVCCG_EnabledName_XX") @SerialName("CVCCG_EnabledName_XX")
+    override val theEnabledName: String = "",
+    /**  */
+    @SerializedName("CVCCG_Name") @SerialName("CVCCG_Name")
+    override val theName: String = "",
+    /**  */
+    @SerializedName("CVCCG_SortNo") @SerialName("CVCCG_SortNo")
+    override val theSortNo: Float? = null,
+    /**  */
+    @SerializedName("Children_ControlProperty") @SerialName("Children_ControlProperty")
+    override val theChildrenControlProperties: List<WtcControlProperty> = listOf(),
+    /**  */
+    @SerializedName("Children_ControlPropertyItem") @SerialName("Children_ControlPropertyItem")
+    override val theChildrenControlPropertyItems: List<WtcControlPropertyItem> = listOf()
+) : MuseumCvControlCodeGroupDelegate
+
+
+/** added by elite_lin - 2026/04/05 */
+@Serializable
+data class WtcControlGroupListResponse(
+    @SerializedName("Data") @SerialName("Data") val theData: List<WtcControlGroup> = listOf(),
+    @SerializedName("TotalCount") @SerialName("TotalCount") val theTotalCount: Float? = null
+) : BaseRestfulApiResponse()
+
+
+/** added by elite_lin - 2026/04/05 */
+@Serializable
+data class WtcControlGroupDetailListResponse(
+    @SerializedName("Data") @SerialName("Data") val theData: List<WtcControlGroupDetail> = listOf(),
+    @SerializedName("TotalCount") @SerialName("TotalCount") val theTotalCount: Float? = null
+) : BaseRestfulApiResponse()
+
+
+/** added by elite_lin - 2026/04/05 */
+@Serializable
+data class WtcControlSettingListResponse(
+    @SerializedName("Data") @SerialName("Data") val theData: List<WtcControlSetting> = listOf(),
+    @SerializedName("TotalCount") @SerialName("TotalCount") val theTotalCount: Float? = null
+) : BaseRestfulApiResponse()
+
+
+/** added by elite_lin - 2026/04/05 */
+@Serializable
+data class WtcControlPropertyListResponse(
+    @SerializedName("Data") @SerialName("Data") val theData: List<WtcControlProperty> = listOf(),
+    @SerializedName("TotalCount") @SerialName("TotalCount") val theTotalCount: Float? = null
+) : BaseRestfulApiResponse()
+
+
+/** added by elite_lin - 2026/04/05 */
+@Serializable
+data class WtcControlPropertyItemListResponse(
+    @SerializedName("Data") @SerialName("Data") val theData: List<WtcControlPropertyItem> = listOf(),
+    @SerializedName("TotalCount") @SerialName("TotalCount") val theTotalCount: Float? = null
+) : BaseRestfulApiResponse()
+
+
+/** added by elite_lin - 2026/04/05 */
+@Serializable
+data class WtcControlCodeListResponse(
+    @SerializedName("Data") @SerialName("Data") val theData: List<WtcControlCode> = listOf(),
     @SerializedName("TotalCount") @SerialName("TotalCount") val theTotalCount: Float? = null
 ) : BaseRestfulApiResponse()
 

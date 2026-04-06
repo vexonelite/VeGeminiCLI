@@ -517,13 +517,342 @@ interface CvControlGroupIdRenameDelegate : DirtySyncDelegate {
 
 
 /** revision by elite_lin - 2025/08/22 */
-interface CvControlGroupDelegate : SyControlGroupDelegate, CvControlGroupIdRenameDelegate {
-    //val theControlGroupId: String
-    val theRefSyControlGroupId: String
+
+// discard
+interface CvControlGroupDelegate : SyncedAtDelegate {
+    val theControlPropertyId: String
+    val theControlPropertySortNo: Int
+    val theRefCvControlSettingId: String
+    val theRefCvCsId: String
+    val theControlControlSettingSortNo: Int
+    val theRefCvControlGroupDetailId: String
+    val theControlGroupDetailName: String
+    val theControlGroupDetailSortNo: Int
+    val theRefCvControlGroupId: String
+    val theControlGroupName: String
     val theRefCvBaseId: String
+    val theRefSyControlPropertyId: String
+    val theRefSyControlCodeId: String
+    val theControlCode: String
+    val theControlCodeName: String
+    val theControlCodeSortNo: Int
+    val theControlSettingName: String
+    val theControlCodeGroupId: String
+    val theControlCodeGroupName: String
+    val theControlCodeGroupSortNo: Int
+}
+
+
+/** added by elite_lin - 2026/04/05 */
+ok
+interface MuseumCvControlGroupQueryDelegate : KeywordQueryModelDelegate {
+    /**  */
+    val theCloneId: String
+    /**  */
+    val theBaseId: String
+    /**  */
+    val theControlGroupId: String
+    /**  */
+    val theKind: String
+    /**  */
+    val theKindName: String
+    /**  */
+    val theName: String
+    /**  */
+    val theReName: String
+    /**  */
+    val theEnabled: String
+    /**  */
+    val theEnabledName: String
+    /**  */
+    override val theKeyword: String
+    /**  */
+    val theQueryLevel: String
+    /**  */
+    val thePageIndex: Float?
+    /**  */
+    val thePageSize: Float?
+    /**  */
+    val theSort: List<MuseumSortItemDelegate>
+}
+
+
+/** added by elite_lin - 2026/04/05 */
+ok
+interface MuseumCvControlGroupDelegate {
+    /**  */
+    val theControlGroupId: String
+    /**  */
+    val theRefCvBaseId: String
+    /**  */
+    val theRefSyControlGroupId: String
+
+    /**  */
+    val theName: String
+    /**  */
+    val theReName: String
+
+    /**  */
+    val theKind: String
+    /**  */
+    val theKindName: String
+
+    /**  */
+    val theEnabled: String
+    /**  */
+    val theEnabledName: String
+
+    /**  */
     val theActInspector: String
+    /**  */
     val theActRecorder: String
-    //val theRename: String
+
+    /**  */
+    val theChildrenControlGroupDetails: List<MuseumCvControlGroupDetailDelegate>
+}
+
+
+/** added by elite_lin - 2026/04/05 */
+
+interface MuseumCvControlGroupDetailDelegate {
+    /**  */
+    val theControlGroupDetailId: String
+    /** Reference to ``CvBase.CVB_BaseID */
+    val theRefCvBaseId: String
+    /** Reference to ``CvControlGroup.CVCG_CloneId */
+    val theRefCvControlGroupId: String
+    /** Reference to ``CvControlGroup.CVCG_CloneId */
+    val theRefCvCgId: String
+    /** Reference to ``SyControlGroupDetail.SYCGD_ControlGroupDetailId.`` */
+    val theRefSyControlGroupDetailId: String
+    val theControlGroupName: String
+    val theName: String
+    val theSortNo: Int?
+    val theEnabled: String
+    val theEnabledName: String
+    
+    /**  */
+    val theChildrenControlSettings: List<MuseumCvControlSettingDelegate>
+}
+
+
+/** added by elite_lin - 2026/04/05 */
+ok
+interface MuseumCvControlSettingDelegate {
+     val theControlSettingId: String
+    /** Reference to ``CvBase.CVB_BaseID */
+    val theRefCvBaseId: String
+    /** Reference to ``CvControlGroupDetail.CVCGD_CloneId`` */
+    val theRefCvControlGroupDetailId: String
+    /** Reference to ``CvControlGroupDetail.CVCGD_CloneId`` */
+    val theRefCvCgdId: String
+    /** Reference to ``CvControlGroup.CVCG_CloneId`` */
+    val theRefCvCgId: String
+    /** Reference to ``SyControlSetting.SYCS_ControlSettingId`` */
+    val theRefSyControlSettingId: String
+    val theCvControlGroupDetailSortNo: Int
+    val theControlGroupName: String
+    val theControlGroupDetailName: String
+    val theName: String
+    val theRemark: String
+    val theSortNo: Int?
+
+    /**  */
+    val theChildrenControlProperties: List<MuseumCvControlPropertyDelegate>
+}
+
+
+/** added by elite_lin - 2026/04/05 */
+OK
+interface MuseumCvControlPropertyDelegate {
+    /**  */
+    val theControlPropertyId: String
+
+    /** Reference to ``CvBase.CVB_BaseID */
+    val theRefCvBaseId: String
+
+    /** Reference to ``CvControlGroup.CVCG_CloneId`` */
+    val theRefCvControlGroupId: String
+
+    /** Reference to ``CvControlGroupDetail.CVCGD_CloneId`` */
+    val theRefCvControlGroupDetailId: String
+
+    /** Reference to ``CvControlSetting.CVCS_CloneId */
+    val theRefCvControlSettingId: String
+
+    /** Reference to ``CvControlSetting.CVCS_CloneId */
+    val theRefCvCsId: String
+
+    /** Reference to ``SyControlProperty.SYCP_ControlPropertyId */
+    val theRefSyControlPropertyId: String
+
+    /** Reference to ``SyControlCode.SYCC_ControlCodeId */
+    val theRefSyControlCodeId: String
+
+    /**  */
+    val theControlGroupName: String
+
+    /**  */
+    val theControlGroupDetailName: String
+    /**  */
+    val theControlGroupDetailSortNo: Int
+
+    /**  */
+    val theControlSettingName: String
+    /**  */
+    val theControlControlSettingSortNo: Int
+
+    /**  */
+    val theControlPropertySortNo: Int
+
+    /**
+     *  - [SyControlPropertyTypes]
+     **/
+    val theControlCode: String
+    /**  */
+    val theControlCodeName: String
+    /**  */
+    val theControlCodeSortNo: Int
+
+    /**  */
+    val theControlCodeGroupId: String
+    /**  */
+    val theControlCodeGroupName: String
+    /**  */
+    val theControlCodeGroupSortNo: Int
+
+    /**  */
+    val theChildrenControlCodes: List<MuseumCvControlCodeDelegate>
+    /**  */
+    val theChildrenControlCodeGroups: List<MuseumCvControlCodeGroupDelegate>
+    /**  */
+    val theChildrenControlPropertyItems: List<MuseumCvControlPropertyItemDelegate>
+}
+
+
+/** added by elite_lin - 2026/04/05 */
+interface MuseumCvControlPropertyItemDelegate {
+    /**  */
+    val theCloneId: String
+    /**  */
+    val theBaseId: String
+    /**  */
+    val theCGDID: String
+    /**  */
+    val theCGDSortNo: Float?
+    /**  */
+    val theCGID: String
+    /**  */
+    val theCode: String
+    /**  */
+    val theCodeGroupId: String
+    /**  */
+    val theControlCode: String
+    /**  */
+    val theControlGroupDetailName: String
+    /**  */
+    val theControlGroupName: String
+    /**  */
+    val theControlPropertyId: String
+    /**  */
+    val theControlPropertyItemId: String
+    /**  */
+    val theControlSettingName: String
+    /**  */
+    val theCPCloneId: String
+    /**  */
+    val theCPID: String
+    /**  */
+    val theCPSortNo: Float?
+    /**  */
+    val theCSID: String
+    /**  */
+    val theCSSortNo: Float?
+    /**  */
+    val theDIndex: Float?
+    /**  */
+    val theFileMode: String
+    /**  */
+    val theHeight: Float?
+    /**  */
+    val theIndex: Float?
+    /**  */
+    val theItemLabel: String
+    /**  */
+    val theItemSort: Float?
+    /**  */
+    val theItemValue: String
+    /**  */
+    val theMIndex: Float?
+    /**  */
+    val theNodeId: String
+    /**  */
+    val theParentId: String
+    /**  */
+    val theRecordValue: String
+    /**  */
+    val theRelactionClickValue: String
+    /**  */
+    val theRelactionControl: String
+    /**  */
+    val theRelactionControlName: String
+    /**  */
+    val theRelactionValue: String
+    /**  */
+    val theRows: Float?
+    /**  */
+    val theSubject: String
+    /**  */
+    val theType: String
+    /**  */
+    val theUrl: String
+    /**  */
+    val theUrlAction: String
+    /**  */
+    val theWidth: Float?
+}
+
+
+/** added by elite_lin - 2026/04/05 */
+ok
+interface MuseumSyControlCodeDelegate {
+    /**  */
+    val theControlCodeId: String
+    /**  */
+    val theCode: String
+    /**  */
+    val theName: String
+    /**  */
+    val theIcon: String
+    /**  */
+    val theEnabled: String
+    /**  */
+    val theEnabledName: String
+    /**  */
+    val theSortNo: Int?
+}
+
+
+/** added by elite_lin - 2026/04/05 */
+interface MuseumCvControlCodeGroupDelegate {
+    /**  */
+    val theCloneId: String
+    /**  */
+    val theControlCodeGroupId: String
+    /**  */
+    val theCPCloneId: String
+    /**  */
+    val theEnabled: String
+    /**  */
+    val theEnabledName: String
+    /**  */
+    val theName: String
+    /**  */
+    val theSortNo: Float?
+    /**  */
+    val theChildrenControlProperties: List<MuseumCvControlPropertyDelegate>
+    /**  */
+    val theChildrenControlPropertyItems: List<MuseumCvControlPropertyItemDelegate>
 }
 
 
