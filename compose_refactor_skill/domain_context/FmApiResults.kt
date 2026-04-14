@@ -1,5 +1,4 @@
 
-
 /**
  * * Ref: [Android Networking in 2019 — Retrofit with Kotlin’s Coroutines](https://android.jlelse.eu/android-networking-in-2019-retrofit-with-kotlins-coroutines-aefe82c4d777)
  */
@@ -45,52 +44,4 @@ infix fun <T, R> T.to(block: (T) -> FmApiResult<R>) = FmApiResult.Success(this).
 
 infix fun <T> FmApiResult<T>.otherwise(block: (Throwable) -> Unit) =
     if (this is FmApiResult.Error) { block(this.cause) } else { Unit }
-
-
-///-------------------------------------------
-
-enum class ListDataStateType {
-    Init,
-    Loading,
-    Available,
-    Unavailable,
-    None,
-}
-
-
-sealed interface ListDataState<T> {
-    val theState: ListDataStateType
-    val theList: List<T>
-
-    data class Init<T>(
-        override val theState: ListDataStateType = ListDataStateType.Loading,
-        override val theList: List<T> = listOf(),
-    ): ListDataState<T>
-
-    data class Loading<T>(
-        override val theState: ListDataStateType = ListDataStateType.Loading,
-        override val theList: List<T> = listOf(),
-    ): ListDataState<T>
-
-    data class Available<T>(
-        override val theState: ListDataStateType = ListDataStateType.Available,
-        override val theList: List<T> = listOf(),
-    ): ListDataState<T>
-
-    data class Unavailable<T>(
-        override val theState: ListDataStateType = ListDataStateType.Unavailable,
-        override val theList: List<T> = listOf(),
-    ): ListDataState<T>
-
-    data class None<T>(
-        override val theState: ListDataStateType = ListDataStateType.None,
-        override val theList: List<T> = listOf(),
-    ): ListDataState<T>
-}
-
-
-// Extension function to convert List<T> to Available state
-fun <T> List<T>.toAvailableState(): ListDataState<T> =
-    ListDataState.Available(theList = this)
-
 
